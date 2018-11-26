@@ -7,14 +7,14 @@ import scala.concurrent.duration._
 object Main extends App {
 
   import de.maxbundscherer.akka.serializationcomparision.services._
-  import de.maxbundscherer.akka.serializationcomparision.persistence.BankAccountAggregate._
+  import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
   private implicit  val timeout     : Timeout        = Timeout(5 seconds)
   private           val actorSystem : ActorSystem    = ActorSystem("system")
 
-  private val bankAccountService: BankAccountService = new BankAccountService(actorSystem)
+  private val carGarageService: CarGarageService = new CarGarageService(actorSystem)
 
-  println(s"Ans from bankAccount actor: '${bankAccountService.askBankAccountActor(SayHello())}'")
+  println(s"Ans from carGarageActor: '${carGarageService.askCarGarageActor(SayHello())}'")
 
   actorSystem.terminate()
 }
