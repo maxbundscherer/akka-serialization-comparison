@@ -10,7 +10,7 @@ import scala.concurrent.{Await, Future}
   * @param actorSystem ActorSystem
   * @param timeout Timeout
   */
-class CarGarageService(actorSystem: ActorSystem)(implicit val timeout: Timeout) {
+class CarGarageService(actorSystem: ActorSystem, actorNamePostfix: String)(implicit timeout: Timeout) {
 
   import de.maxbundscherer.akka.serializationcomparision.actors._
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
@@ -18,7 +18,7 @@ class CarGarageService(actorSystem: ActorSystem)(implicit val timeout: Timeout) 
   /**
     * Start carGarageActor in actorSystem
     */
-  private val carGarageActor  = actorSystem.actorOf( CarGarageActor.props )
+  private val carGarageActor  = actorSystem.actorOf( CarGarageActor.props(actorNamePostfix) )
 
   /**
     * Ask carGarageActor and wait for response

@@ -7,15 +7,15 @@ import akka.actor.{Actor, ActorLogging, Props}
 object CarGarageActor {
 
   // ~ Settings ~
-  final val persistenceId: String = "carGarageActor"
-  final val props: Props          = Props(new CarGarageActor())
+  final val persistenceId                  : String = "carGarageActor"
+  final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
   case class CarGarageState()
 
 }
 
-class CarGarageActor extends Actor with ActorLogging {
+private class CarGarageActor(actorNamePostfix: String) extends Actor with ActorLogging {
 
   import CarGarageActor._
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._

@@ -1,20 +1,21 @@
 package de.maxbundscherer.akka.serializationcomparision
 
+import de.maxbundscherer.akka.serializationcomparision.utils.{ExperimentMode, ExperimentRunner}
+
 import akka.actor.ActorSystem
+import akka.event.LoggingAdapter
 import akka.util.Timeout
 import scala.concurrent.duration._
 
 object Main extends App {
 
-  import de.maxbundscherer.akka.serializationcomparision.services._
-  import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
+  //TODO: Change root logger
+  private implicit val rootLogger : LoggingAdapter = ActorSystem("actorSystem-ROOT").log
+  private implicit val timeout    : Timeout        = Timeout(5 seconds)
 
-  private implicit  val timeout     : Timeout        = Timeout(5 seconds)
-  private           val actorSystem : ActorSystem    = ActorSystem("system")
+  // ~ Run Experiments ~
+  new ExperimentRunner( ExperimentMode.JAVA )
+  new ExperimentRunner( ExperimentMode.JSON )
+  new ExperimentRunner( ExperimentMode.PROTOBUF )
 
-  private val carGarageService: CarGarageService = new CarGarageService(actorSystem)
-
-  println(s"Ans from carGarageActor: '${carGarageService.askCarGarageActor(SayHello())}'")
-
-  actorSystem.terminate()
 }
