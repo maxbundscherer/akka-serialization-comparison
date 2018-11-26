@@ -56,7 +56,8 @@ class ExperimentRunner(mode: ExperimentMode)(implicit rootLogger: LoggingAdapter
 
     val carGarageService: CarGarageService = new CarGarageService(actorSystem, actorNamePostfix = this.mode.toString)
 
-    rootLogger.info( s"Ans from carGarageActor (mode=${this.mode}) '${carGarageService.askCarGarageActor(SayHello())}'" )
+    val ans: CarGarageResponse = carGarageService.askCarGarageActor(SayHello())
+    rootLogger.info( s"Ans from carGarageActor (mode=${this.mode}) '$ans'" )
 
   }
 
