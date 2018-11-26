@@ -11,7 +11,14 @@ This project **compares different serializers** can be used in akka projects (fo
 
 ### Requirements
 
-- [sbt](https://www.scala-sbt.org/)
+- [sbt](https://www.scala-sbt.org/) (v. 1.2.6 or higher)
+
+### Included tools
+
+- [Scala](https://www.scala-lang.org/) (v. 2.12.7)
+- [ScalaPB](https://github.com/scalapb/ScalaPB) (v. 0.8.1)
+- [Akka Actors](https://doc.akka.io/docs/akka/2.5/actors.html) (v. 2.5.18)
+- [Akka Persistence](https://doc.akka.io/docs/akka/2.5/persistence.html) (v. 2.5.18)
 
 ### Let´s get started
 
