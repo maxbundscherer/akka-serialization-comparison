@@ -17,4 +17,5 @@ This project **compares different serializers** can be used in akka projects (fo
 
 1. Checkout project
 2. Go to ``./`` (project root folder)
-3. Run command ``sbt run``
+3. Run command ``sbt clean run`` (clean database)
+4. Or run command ``sbt run`` (non clean database)
