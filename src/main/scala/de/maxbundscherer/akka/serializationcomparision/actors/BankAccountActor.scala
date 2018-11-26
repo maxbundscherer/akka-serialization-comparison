@@ -1,9 +1,17 @@
 package de.maxbundscherer.akka.serializationcomparision.actors
 
-import akka.actor.{Actor, ActorLogging}
+import akka.actor.{Actor, ActorLogging, Props}
+
+object BankAccountActor {
+
+  final val persistenceId: String = "bankAccountActor"
+  final val props: Props          = Props(classOf[BankAccountActor])
+
+}
 
 class BankAccountActor extends Actor with ActorLogging {
 
+  import BankAccountActor._
   import de.maxbundscherer.akka.serializationcomparision.persistence.BankAccountAggregate._
 
   override def receive: Receive = {
