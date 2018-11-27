@@ -30,19 +30,19 @@ class ExperimentRunner(mode: ExperimentMode)(implicit rootLogger: LoggingAdapter
   /**
     * Set mode string (string value of mode)
     */
-  private final val modeValue: String = this.mode.toString.toLowerCase
+  private final val modeValue: String = mode.toString.toLowerCase
 
   /**
     * Init experiment (start akka system and load system config)
     */
-  rootLogger.info(s"--- Start ${this.modeValue} Experiment ---")
+  rootLogger.info(s"--- Start $modeValue Experiment ---")
   runExperiment(
     actorSystem = ActorSystem(
-      name = s"actorSystem-${this.modeValue}",
-      config = ConfigFactory.load(s"${this.modeValue}-akka-system.conf")
+      name = s"actorSystem-$modeValue",
+      config = ConfigFactory.load(s"$modeValue-akka-system.conf")
     )
   )
-  rootLogger.info(s"--- End ${this.modeValue} Experiment ---")
+  rootLogger.info(s"--- End $modeValue Experiment ---")
 
   /**
     * Run Experiment
@@ -50,11 +50,12 @@ class ExperimentRunner(mode: ExperimentMode)(implicit rootLogger: LoggingAdapter
     */
   private def runExperiment(actorSystem: ActorSystem): Unit = {
 
-    val carGarageService: CarGarageService = new CarGarageService(actorSystem, actorNamePostfix = this.modeValue)
+    val carGarageService: CarGarageService = new CarGarageService(actorSystem, actorNamePostfix = modeValue)
 
-    val ans: CarGarageResponse = carGarageService.askCarGarageActor(SayHello())
-    rootLogger.info( s"Ans from carGarageActor (mode=${this.modeValue}) '$ans'" )
+    val ans: CarGarageResponse = carGarageService.askCarGarageActor(IncrementCmd())
+    rootLogger.info( s"Ans from carGarageActor (mode=$modeValue) '$ans'" )
 
+    actorSystem.terminate()
   }
 
 }

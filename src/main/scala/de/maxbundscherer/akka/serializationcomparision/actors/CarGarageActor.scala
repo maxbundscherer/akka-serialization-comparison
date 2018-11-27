@@ -8,13 +8,19 @@ import akka.persistence.{PersistentActor, RecoveryCompleted, SnapshotOffer}
   */
 object CarGarageActor {
 
+  import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
+
   // ~ Settings ~
   final val persistenceIdPrefix            : String = "carGarageActor"
   final val snapshotInterval               : Int    = 100
   final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
-  case class CarGarageState()
+  case class CarGarageState(balance: Int = 0) {
+
+    def increment(evt: IncrementEvt): CarGarageState = copy(balance = balance + 1)
+
+  }
 
 }
 
@@ -31,7 +37,7 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     * Set persistenceId (must be unique)
     * @return String
     */
-  override def persistenceId: String = s"$persistenceIdPrefix-${this.actorNamePostfix}"
+  override def persistenceId: String = s"$persistenceIdPrefix-$actorNamePostfix"
 
   /**
     * Mutable actor state
@@ -89,7 +95,7 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     */
   private def processCommand(cmd: CarGarageCmd): Unit = cmd match {
 
-    case _: SayHello => tellSender( Hello() )
+    case _: IncrementCmd => persistAndUpdateState( IncrementEvt() )
   }
 
   /**
@@ -105,6 +111,12 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     * @return Unit
     */
   private def updateState(evt: CarGarageEvt): Unit = evt match {
+
+    case evt: IncrementEvt =>
+
+      state = state increment evt
+      snapshot()
+      tellSender( IncrementSuccess(state.balance) )
 
     case _: Any => log.error(s"Get unhandled evt ('$evt')")
   }
@@ -127,7 +139,7 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
         lastSequenceNr != 0
     ) {
 
-      log.debug(s"Do snapshot ('${this.state}') now")
+      log.debug(s"Do snapshot ('$state') now")
       saveSnapshot(state)
     }
 

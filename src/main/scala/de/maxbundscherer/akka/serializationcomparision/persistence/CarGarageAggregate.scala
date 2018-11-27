@@ -6,7 +6,8 @@ object CarGarageAggregate {
   trait CarGarageEvt
   trait CarGarageResponse
 
-  case class SayHello() extends CarGarageCmd
-  case class Hello()    extends CarGarageResponse
+  case class IncrementCmd()                 extends CarGarageCmd
+  case class IncrementEvt()                 extends CarGarageEvt
+  case class IncrementSuccess(balance: Int) extends CarGarageResponse
 
 }
