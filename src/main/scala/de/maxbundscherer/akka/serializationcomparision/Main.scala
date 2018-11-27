@@ -16,8 +16,8 @@ object Main extends App {
 
   // ~ Run Experiments ~
   new ExperimentRunner( ExperimentMode.JAVA )
-  new ExperimentRunner( ExperimentMode.JSON )
-  new ExperimentRunner( ExperimentMode.PROTOBUF )
+  //new ExperimentRunner( ExperimentMode.JSON )
+  //new ExperimentRunner( ExperimentMode.PROTOBUF )
 
   rootActorSystem.terminate()
 }

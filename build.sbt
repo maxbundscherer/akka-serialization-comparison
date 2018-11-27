@@ -2,12 +2,15 @@ name          := "akka-serialization-comparision"
 version       := "0.1"
 scalaVersion  := "2.12.7"
 
-// ~ Versions ~
-val akkaVersion: String = "2.5.18"
-
 // ~ Add Akka Actors and Akka Persistence
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-persistence" % akkaVersion
+  "com.typesafe.akka" %% "akka-persistence" % "2.5.18"
+)
+
+// ~ Add LevelDB and Java Native Interface ~
+libraryDependencies ++= Seq(
+  "org.iq80.leveldb"            % "leveldb"          % "0.7",
+  "org.fusesource.leveldbjni"   % "leveldbjni-all"   % "1.8"
 )
 
 // ~ Import-Bug (scalaPB) ~
