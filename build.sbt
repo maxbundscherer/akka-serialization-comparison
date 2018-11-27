@@ -7,8 +7,7 @@ val akkaVersion: String = "2.5.18"
 
 // ~ Add Akka Actors and Akka Persistence
 libraryDependencies ++= Seq(
-  "com.typesafe.akka" %% "akka-actor" % akkaVersion,
-  // "com.typesafe.akka" %% "akka-testkit" % akkaVersion % Test
+  "com.typesafe.akka" %% "akka-persistence" % akkaVersion
 )
 
 // ~ Import-Bug (scalaPB) ~
