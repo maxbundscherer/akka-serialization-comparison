@@ -5,6 +5,7 @@ import de.maxbundscherer.akka.serializationcomparision.utils.ExperimentMode.Expe
 import akka.actor.ActorSystem
 import akka.event.LoggingAdapter
 import akka.util.Timeout
+import com.typesafe.config.ConfigFactory
 
 /**
   * ExperimentMode (Enumeration)
@@ -26,27 +27,22 @@ class ExperimentRunner(mode: ExperimentMode)(implicit rootLogger: LoggingAdapter
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
-  mode match {
+  /**
+    * Set mode string (string value of mode)
+    */
+  private final val modeValue: String = this.mode.toString.toLowerCase
 
-    case ExperimentMode.JAVA     =>
-
-      rootLogger.info(s"Start ${this.mode} Experiment")
-      runExperiment( ActorSystem(s"actorSystem-${this.mode}") )
-      rootLogger.info(s"End ${this.mode} Experiment")
-
-    case ExperimentMode.JSON     =>
-
-      rootLogger.info(s"Start ${this.mode} Experiment")
-      runExperiment( ActorSystem(s"actorSystem-${this.mode}") )
-      rootLogger.info(s"End ${this.mode} Experiment")
-
-    case ExperimentMode.PROTOBUF =>
-
-      rootLogger.info(s"Start ${this.mode} Experiment")
-      runExperiment( ActorSystem(s"actorSystem-${this.mode}") )
-      rootLogger.info(s"End ${this.mode} Experiment")
-
-  }
+  /**
+    * Init experiment (start akka system and load system config)
+    */
+  rootLogger.info(s"--- Start ${this.modeValue} Experiment ---")
+  runExperiment(
+    actorSystem = ActorSystem(
+      name = s"actorSystem-${this.modeValue}",
+      config = ConfigFactory.load(s"${this.modeValue}-akka-system.conf")
+    )
+  )
+  rootLogger.info(s"--- End ${this.modeValue} Experiment ---")
 
   /**
     * Run Experiment
@@ -54,10 +50,10 @@ class ExperimentRunner(mode: ExperimentMode)(implicit rootLogger: LoggingAdapter
     */
   private def runExperiment(actorSystem: ActorSystem): Unit = {
 
-    val carGarageService: CarGarageService = new CarGarageService(actorSystem, actorNamePostfix = this.mode.toString)
+    val carGarageService: CarGarageService = new CarGarageService(actorSystem, actorNamePostfix = this.modeValue)
 
     val ans: CarGarageResponse = carGarageService.askCarGarageActor(SayHello())
-    rootLogger.info( s"Ans from carGarageActor (mode=${this.mode}) '$ans'" )
+    rootLogger.info( s"Ans from carGarageActor (mode=${this.modeValue}) '$ans'" )
 
   }
 
