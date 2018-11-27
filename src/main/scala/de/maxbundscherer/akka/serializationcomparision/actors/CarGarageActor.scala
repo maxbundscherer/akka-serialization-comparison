@@ -1,7 +1,7 @@
 package de.maxbundscherer.akka.serializationcomparision.actors
 
 import akka.actor.{ActorLogging, Props}
-import akka.persistence.{PersistentActor, SnapshotOffer}
+import akka.persistence.{PersistentActor, RecoveryCompleted, SnapshotOffer}
 
 /**
   * CarGarageActor (Singleton)
@@ -53,6 +53,10 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
 
       log.debug(s"Restore from snapshot ('$snapshot')")
       state = snapshot
+
+    case _: RecoveryCompleted =>
+
+      log.debug("RecoveryCompleted")
 
     case evt: CarGarageEvt =>
 
