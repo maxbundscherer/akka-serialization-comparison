@@ -54,4 +54,6 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
   log.info(s"Answer from carGarageActor: '${carGarageService.askCarGarageActor(IncrementCmd())}'")
   log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
+  actorSystem.terminate()
+
 }
