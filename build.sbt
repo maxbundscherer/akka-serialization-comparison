@@ -7,7 +7,7 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-persistence" % "2.5.18"
 )
 
-// ~ Add LevelDB and Java Native Interface ~
+// ~ Add LevelDB and Java Native Interface for LevelDB ~
 libraryDependencies ++= Seq(
   "org.iq80.leveldb"            % "leveldb"          % "0.7",
   "org.fusesource.leveldbjni"   % "leveldbjni-all"   % "1.8"
