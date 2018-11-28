@@ -16,7 +16,7 @@ class CarGarageService(actorSystem: ActorSystem, actorNamePostfix: String)(impli
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
   /**
-    * Start carGarageActor in actorSystem
+    * Start carGarageActor with custom postfix in actorSystem
     */
   private val carGarageActor  = actorSystem.actorOf( CarGarageActor.props(actorNamePostfix) )
 

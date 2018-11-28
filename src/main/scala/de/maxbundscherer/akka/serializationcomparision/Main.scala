@@ -2,16 +2,11 @@ package de.maxbundscherer.akka.serializationcomparision
 
 import de.maxbundscherer.akka.serializationcomparision.utils.{ExperimentMode, ExperimentRunner}
 
-import akka.actor.ActorSystem
-import akka.event.LoggingAdapter
 import akka.util.Timeout
 import scala.concurrent.duration._
 
 object Main extends App {
 
-  //TODO: Change root logger
-  private          val rootActorSystem  : ActorSystem    = ActorSystem("actorSystem-root")
-  private implicit val rootLogger       : LoggingAdapter = rootActorSystem.log
   private implicit val timeout          : Timeout        = Timeout(5 seconds)
 
   // ~ Run Experiments ~
@@ -19,5 +14,4 @@ object Main extends App {
   new ExperimentRunner( ExperimentMode.JSON )
   new ExperimentRunner( ExperimentMode.PROTOBUF )
 
-  rootActorSystem.terminate()
 }

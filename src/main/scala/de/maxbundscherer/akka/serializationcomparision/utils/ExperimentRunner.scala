@@ -19,43 +19,39 @@ object ExperimentMode extends Enumeration {
 /**
   * ExperimentRunner
   * @param mode ExperimentMode
-  * @param rootLogger LoggingAdapter
-  * @param timeout Timeout
+  * @param timeout Timeout for asking an actor
   */
-class ExperimentRunner(mode: ExperimentMode)(implicit rootLogger: LoggingAdapter, timeout: Timeout) {
+class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
   /**
-    * Set mode string (string value of mode)
+    * ~ Init experiment (start akkaSystem and load system config) ~
+    * 1. Set modeValue
+    * 2. Start AkkaSystem with config
+    * 3. Start CarGarageService
+    * 4. Define logger
     */
-  private final val modeValue: String = mode.toString.toLowerCase
+  private final val modeValue       : String = mode.toString.toLowerCase
 
-  /**
-    * Init experiment (start akka system and load system config)
-    */
-  rootLogger.info(s"--- Start $modeValue Experiment ---")
-  runExperiment(
-    actorSystem = ActorSystem(
-      name = s"actorSystem-$modeValue",
-      config = ConfigFactory.load(s"$modeValue-akka-system.conf")
-    )
+  private final val actorSystem     : ActorSystem = ActorSystem(
+    name = s"actorSystem-$modeValue",
+    config = ConfigFactory.load(s"akka-system-$modeValue.conf")
   )
-  rootLogger.info(s"--- End $modeValue Experiment ---")
+
+  private final val carGarageService: CarGarageService = new CarGarageService(
+    actorSystem = actorSystem,
+    actorNamePostfix = modeValue
+  )
+
+  private final val log             : LoggingAdapter = actorSystem.log
 
   /**
-    * Run Experiment
-    * @param actorSystem ActorSystem
+    * ~ Run Experiment ~
     */
-  private def runExperiment(actorSystem: ActorSystem): Unit = {
-
-    val carGarageService: CarGarageService = new CarGarageService(actorSystem, actorNamePostfix = modeValue)
-
-    val ans: CarGarageResponse = carGarageService.askCarGarageActor(IncrementCmd())
-    rootLogger.info( s"Ans from carGarageActor (mode=$modeValue) '$ans'" )
-
-    actorSystem.terminate()
-  }
+  log.info(s"--- Start Experiment (modeValue='$modeValue') ---")
+  log.info(s"Answer from carGarageActor: '${carGarageService.askCarGarageActor(IncrementCmd())}'")
+  log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
 }
