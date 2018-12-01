@@ -59,13 +59,16 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
   // ~ GetAllCar ~
   log.info("GetAllCar: "   + carGarageService.getAllCar)
 
+  // ~ Set Number of Cars ~
+  val numberOfCars: Int = 99000
+
   // ~ Add Loop ~
-  for (i <- 0 to 9000) {
+  for (i <- 0 to numberOfCars) {
     log.debug("AddCar: "   + carGarageService.addCar   ( Car(id = i, horsepower = 200+i, name = "BMW F" + 30+i) ))
   }
 
   // ~ Update Loop ~
-  for (i <- 0 to 9000) {
+  for (i <- 0 to numberOfCars) {
     log.debug("UpdateCar: " + carGarageService.updateCar( Car(id = i, horsepower = (200+i)*2, name = "BMW F" + 30+i) ))
   }
 
