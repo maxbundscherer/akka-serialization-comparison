@@ -25,8 +25,15 @@ class CarGarageService(actorSystem: ActorSystem, actorNamePostfix: String)(impli
     * @param cmd CarGarageCmd
     * @return CarGarageResponse
     */
-  def askCarGarageActor(cmd: CarGarageCmd): CarGarageResponse =
+  private def askCarGarageActor(cmd: CarGarageCmd): CarGarageResponse =
 
     Await.result( (carGarageActor ? cmd).asInstanceOf[Future[CarGarageResponse]], timeout.duration )
+
+  /*
+   * ~ Send Cmd ~
+   */
+  def addCar   (value: Car)         : CarGarageResponse = askCarGarageActor( AddCarCmd(value) )
+  def updateCar(value: Car)         : CarGarageResponse = askCarGarageActor( UpdateCarCmd(value) )
+  def getAllCar                     : CarGarageResponse = askCarGarageActor( GetAllCarCmd() )
 
 }

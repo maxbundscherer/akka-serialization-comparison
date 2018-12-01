@@ -16,9 +16,10 @@ object CarGarageActor {
   final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
-  case class CarGarageState(balance: Int = 0) {
+  case class CarGarageState(cars: Vector[Car] = Vector.empty) {
 
-    def increment(evt: IncrementEvt): CarGarageState = copy(balance = balance + 1)
+    def addCar(evt: AddCarEvt)      : CarGarageState  = copy(cars = cars :+ evt.value)
+    def updateCar(evt: UpdateCarEvt): CarGarageState  = copy(cars = cars.filter(_.id != evt.value.id) :+ evt.value)
 
   }
 
@@ -95,7 +96,24 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     */
   private def processCommand(cmd: CarGarageCmd): Unit = cmd match {
 
-    case _: IncrementCmd => persistAndUpdateState( IncrementEvt() )
+    case cmd: AddCarCmd =>
+
+      state.cars.find(_.id == cmd.value.id) match {
+        case Some(_) => tellSender( CarAlreadyExists() )
+        case None    => persistAndUpdateState( AddCarEvt(cmd.value) )
+      }
+
+    case cmd: UpdateCarCmd =>
+
+      state.cars.find(_.id == cmd.value.id) match {
+        case None    => tellSender( CarNotFound() )
+        case Some(_) => persistAndUpdateState( UpdateCarEvt(cmd.value) )
+      }
+
+    case _: GetAllCarCmd =>
+
+      tellSender( GetAllCar(state.cars) )
+
   }
 
   /**
@@ -112,11 +130,17 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     */
   private def updateState(evt: CarGarageEvt): Unit = evt match {
 
-    case evt: IncrementEvt =>
+    case evt: AddCarEvt =>
 
-      state = state increment evt
+      state = state addCar evt
       snapshot()
-      tellSender( IncrementSuccess(state.balance) )
+      tellSender( CarGarageSuccess() )
+
+    case evt: UpdateCarEvt =>
+
+      state = state updateCar evt
+      snapshot()
+      tellSender( CarGarageSuccess() )
 
     case _: Any => log.error(s"Get unhandled evt ('$evt')")
   }

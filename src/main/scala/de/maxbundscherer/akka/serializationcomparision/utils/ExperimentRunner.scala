@@ -51,7 +51,20 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
     * ~ Run Experiment ~
     */
   log.info(s"--- Start Experiment (modeValue='$modeValue') ---")
-  log.info(s"Answer from carGarageActor: '${carGarageService.askCarGarageActor(IncrementCmd())}'")
+
+  // ~ Add Loop ~
+  for (i <- 0 to 9) {
+    log.debug("AddCar: "   + carGarageService.addCar   ( Car(id = i, horsepower = 200+i, name = "BMW F" + 30+i) ))
+  }
+
+  // ~ Update Loop ~
+  for (i <- 0 to 9) {
+    log.debug("UpdateCar: " + carGarageService.updateCar( Car(id = i, horsepower = (200+i)*2, name = "BMW F" + 30+i) ))
+  }
+
+  // ~ GetAllCar ~
+  log.debug("GetAlLCar: "   + carGarageService.getAllCar)
+
   log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
   actorSystem.terminate()
