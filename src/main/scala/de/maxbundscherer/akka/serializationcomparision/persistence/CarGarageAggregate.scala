@@ -15,19 +15,25 @@ object CarGarageAggregate {
                 )
 
   // ~ Command and Evt ~
-  case class AddCarCmd(value: Car)          extends CarGarageCmd
-  case class AddCarEvt(value: Car)          extends CarGarageEvt
+  case class AddCarCmd(value: Car)            extends CarGarageCmd
+  case class AddCarEvt(value: Car)            extends CarGarageEvt
 
-  case class UpdateCarCmd(value: Car)       extends CarGarageCmd
-  case class UpdateCarEvt(value: Car)       extends CarGarageEvt
+  case class UpdateCarCmd(value: Car)         extends CarGarageCmd
+  case class UpdateCarEvt(value: Car)         extends CarGarageEvt
 
   // ~ Response ~
-  case class CarGarageSuccess()             extends CarGarageResponse
-  case class CarNotFound()                  extends CarGarageResponse
-  case class CarAlreadyExists()             extends CarGarageResponse
+  case class CarGarageSuccess()               extends CarGarageResponse
+  case class CarNotFound()                    extends CarGarageResponse
+  case class CarAlreadyExists()               extends CarGarageResponse
 
-  // ~ Request and Response ~ //
-  case class GetAllCarCmd()                 extends CarGarageCmd
-  case class GetAllCar(value: Vector[Car])  extends CarGarageResponse
+  // ~ Request  ~
+  case class StartTimeMeasurementCmd()        extends CarGarageCmd
+
+  // ~ Request and Response
+  case class GetAllCarCmd()                   extends CarGarageCmd
+  case class GetAllCar(value: Vector[Car])    extends CarGarageResponse
+
+  case class StopTimeMeasurementCmd()         extends CarGarageCmd
+  case class StopTimeMeasurement(value: Long) extends CarGarageResponse
 
 }

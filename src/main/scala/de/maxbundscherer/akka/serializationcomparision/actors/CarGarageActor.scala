@@ -1,7 +1,9 @@
 package de.maxbundscherer.akka.serializationcomparision.actors
 
+import de.maxbundscherer.akka.serializationcomparision.utils.TimeMeasurement
+
 import akka.actor.{ActorLogging, Props}
-import akka.persistence.{PersistentActor, RecoveryCompleted, SnapshotOffer}
+import akka.persistence.{PersistentActor, RecoveryCompleted, SaveSnapshotSuccess, SnapshotOffer}
 
 /**
   * CarGarageActor (Singleton)
@@ -29,7 +31,7 @@ object CarGarageActor {
   * CarGarageActor
   * @param actorNamePostfix String
   */
-private class CarGarageActor(actorNamePostfix: String) extends PersistentActor with ActorLogging {
+private class CarGarageActor(actorNamePostfix: String) extends PersistentActor with ActorLogging with TimeMeasurement {
 
   import CarGarageActor._
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
@@ -84,6 +86,10 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
 
       processCommand(cmd)
 
+    case _: SaveSnapshotSuccess =>
+
+    log.debug("SaveSnapshotSuccess")
+
     case msg: Any =>
 
       log.warning("Get unhandled message in default behavior (" + msg + ")")
@@ -113,6 +119,15 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     case _: GetAllCarCmd =>
 
       tellSender( GetAllCar(state.cars) )
+
+    case _: StartTimeMeasurementCmd =>
+
+      startTimeMeasurement()
+      tellSender( CarGarageSuccess() )
+
+    case _: StopTimeMeasurementCmd =>
+
+      tellSender( StopTimeMeasurement(value = stopTimeMeasurement()) )
 
   }
 

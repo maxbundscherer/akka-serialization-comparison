@@ -6,6 +6,7 @@ import akka.actor.ActorSystem
 import akka.event.LoggingAdapter
 import akka.util.Timeout
 import com.typesafe.config.ConfigFactory
+import scala.concurrent.duration.Duration
 
 /**
   * ExperimentMode (Enumeration)
@@ -52,18 +53,26 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
     */
   log.info(s"--- Start Experiment (modeValue='$modeValue') ---")
 
+  // ~ Start Time Measurement ~
+  log.debug("StartTimeMeasurement: " + carGarageService.startTimeMeasurement)
+
   // ~ Add Loop ~
-  for (i <- 0 to 9) {
+  for (i <- 0 to 9000) {
     log.debug("AddCar: "   + carGarageService.addCar   ( Car(id = i, horsepower = 200+i, name = "BMW F" + 30+i) ))
   }
 
   // ~ Update Loop ~
-  for (i <- 0 to 9) {
+  for (i <- 0 to 9000) {
     log.debug("UpdateCar: " + carGarageService.updateCar( Car(id = i, horsepower = (200+i)*2, name = "BMW F" + 30+i) ))
   }
 
   // ~ GetAllCar ~
   log.debug("GetAlLCar: "   + carGarageService.getAllCar)
+
+  // ~ Stop Time Measurement ~
+  val duration: Duration = Duration.fromNanos(carGarageService.stopTimeMeasurement.asInstanceOf[StopTimeMeasurement].value)
+
+  log.info("StopTimeMeasurement: " + duration.toSeconds + " seconds")
 
   log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
