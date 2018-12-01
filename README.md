@@ -21,6 +21,7 @@ This project **compares different serializers** can be used in akka projects (fo
 - [Akka Persistence](https://doc.akka.io/docs/akka/2.5/persistence.html) (v. 2.5.18)
 - [Port of LevelDB to Java](https://github.com/dain/leveldb) (v. 0.7)
 - [LevelDB Java Native Interface](https://github.com/fusesource/leveldbjni) (v. 1.8)
+- [Circe](https://circe.github.io/circe/) (v. 0.10.0)
 
 ### Let´s get started
 

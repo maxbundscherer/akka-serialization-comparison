@@ -13,6 +13,14 @@ libraryDependencies ++= Seq(
   "org.fusesource.leveldbjni"   % "leveldbjni-all"   % "1.8"
 )
 
+// ~ Add Circe LevelDB ~
+val circeVersion = "0.10.0"
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
+
 // ~ Import-Bug (scalaPB) ~
 libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.compiler.Version.scalapbVersion % "protobuf"
 
