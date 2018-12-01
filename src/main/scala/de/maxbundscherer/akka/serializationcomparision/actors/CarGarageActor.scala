@@ -14,7 +14,7 @@ object CarGarageActor {
 
   // ~ Settings ~
   final val persistenceIdPrefix            : String = "carGarageActor"
-  final val snapshotInterval               : Int    = 100
+  final val snapshotInterval               : Int    = 1000
   final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
@@ -128,6 +128,10 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     case _: StopTimeMeasurementCmd =>
 
       tellSender( StopTimeMeasurement(value = stopTimeMeasurement()) )
+
+    case _: SimulateCrashCmd =>
+
+      throw new RuntimeException("Simulate crash")
 
   }
 

@@ -56,6 +56,9 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
   // ~ Start Time Measurement ~
   log.debug("StartTimeMeasurement: " + carGarageService.startTimeMeasurement)
 
+  // ~ GetAllCar ~
+  log.info("GetAllCar: "   + carGarageService.getAllCar)
+
   // ~ Add Loop ~
   for (i <- 0 to 9000) {
     log.debug("AddCar: "   + carGarageService.addCar   ( Car(id = i, horsepower = 200+i, name = "BMW F" + 30+i) ))
@@ -66,11 +69,15 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
     log.debug("UpdateCar: " + carGarageService.updateCar( Car(id = i, horsepower = (200+i)*2, name = "BMW F" + 30+i) ))
   }
 
+  // ~ Simulate Crash ~
+  //TODO: Simulate Crash and save time
+  //carGarageService.simulateCrash()
+
   // ~ GetAllCar ~
   log.debug("GetAlLCar: "   + carGarageService.getAllCar)
 
   // ~ Stop Time Measurement ~
-  val duration: Duration = Duration.fromNanos(carGarageService.stopTimeMeasurement.asInstanceOf[StopTimeMeasurement].value)
+  val duration: Duration = Duration.fromNanos(carGarageService.stopTimeMeasurement.value)
 
   log.info("StopTimeMeasurement: " + duration.toSeconds + " seconds")
 
