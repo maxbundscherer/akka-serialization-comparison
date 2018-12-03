@@ -1,78 +1,17 @@
 package de.maxbundscherer.akka.serializationcomparision.serializer
 
-import akka.serialization.SerializerWithStringManifest
-import java.nio.charset.StandardCharsets
-
-import io.circe.generic.auto._, io.circe.parser._, io.circe.syntax._
-
-class JsonSerializer extends SerializerWithStringManifest {
+class JsonSerializer extends AbstractSerializer {
 
   import de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.CarGarageState
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
-  /**
-    * Models
-    */
-  case class CarDb(
-                    id: Int,
-                    horsepower: Int,
-                    name: String
-                  )
-  case class AddCarEvtDb      (value: CarDb)
-  case class UpdateCarEvtDb   (value: CarDb)
-  case class CarGarageStateDb (cars: Vector[CarDb])
-
-  /**
-    * Converter
-    */
-  private object Converter {
-
-    object FromDbToEntity {
-
-      def car       (dbEntity: CarDb): Car = Car(id = dbEntity.id, horsepower = dbEntity.horsepower, name = dbEntity.name)
-
-      def addCarEvt     (dbEntity: AddCarEvtDb)     : AddCarEvt      = AddCarEvt      ( value = car(dbEntity.value) )
-      def updateCarEvt  (dbEntity: UpdateCarEvtDb)  : UpdateCarEvt   = UpdateCarEvt   ( value = car(dbEntity.value) )
-      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( cars = dbEntity.cars.map(c => car(c)) )
-
-    }
-
-    object FromEntityToDb {
-
-      def car       (entity: Car): CarDb = CarDb(id = entity.id, horsepower = entity.horsepower, name = entity.name)
-
-      def addCarEvt     (entity: AddCarEvt)     : AddCarEvtDb      = AddCarEvtDb      ( value = car(entity.value) )
-      def updateCarEvt  (entity: UpdateCarEvt)  : UpdateCarEvtDb   = UpdateCarEvtDb   ( value = car(entity.value) )
-      def carGarageState(entity: CarGarageState): CarGarageStateDb = CarGarageStateDb ( cars = entity.cars.map(c => car(c)) )
-
-    }
-
-  }
-
-  /**
-    * Charset
-    */
-  final val UTF_8 = StandardCharsets.UTF_8.name()
-
-  /**
-    * Manifests
-    */
-  final val AddCarEvtDbManifest       = classOf[AddCarEvtDb]      .getName
-  final val UpdateCarEvtDbManifest    = classOf[UpdateCarEvtDb]   .getName
-  final val CarGarageStateDbManifest  = classOf[CarGarageStateDb] .getName
+  import io.circe.generic.auto._, io.circe.parser._, io.circe.syntax._
 
   /**
     * Serializer Identifier
     * @return Int
     */
-  override def identifier: Int = 9001
-
-  /**
-    * Get manifest (getClass.getName) - same for developer-defined manifests
-    * @param o Object
-    * @return String
-    */
-  override def manifest(o: AnyRef): String = o.getClass.getName
+  override def identifier: Int = 9002
 
   /**
     * Convert from entity to binary
@@ -81,7 +20,7 @@ class JsonSerializer extends SerializerWithStringManifest {
     */
   override def toBinary(o: AnyRef): Array[Byte] = o match {
 
-    case o: AddCarEvt      =>
+    case o: AddCarEvt         =>
 
       val value: AddCarEvtDb = Converter.FromEntityToDb.addCarEvt(o)
       value.asJson.toString().getBytes(UTF_8)
@@ -91,7 +30,7 @@ class JsonSerializer extends SerializerWithStringManifest {
       val value: UpdateCarEvtDb = Converter.FromEntityToDb.updateCarEvt(o)
       value.asJson.toString().getBytes(UTF_8)
 
-    case o: CarGarageState      =>
+    case o: CarGarageState    =>
 
       val value: CarGarageStateDb = Converter.FromEntityToDb.carGarageState(o)
       value.asJson.toString().getBytes(UTF_8)
