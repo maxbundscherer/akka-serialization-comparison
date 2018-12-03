@@ -77,7 +77,7 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
   //carGarageService.simulateCrash()
 
   // ~ GetAllCar ~
-  log.info("GetAllCar: "   + carGarageService.getAllCar)
+  log.debug("GetAllCar: "   + carGarageService.getAllCar)
 
   // ~ Stop Time Measurement ~
   val duration: Duration = Duration.fromNanos(carGarageService.stopTimeMeasurement.value)
