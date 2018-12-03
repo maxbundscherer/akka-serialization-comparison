@@ -77,7 +77,7 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
   //carGarageService.simulateCrash()
 
   // ~ GetAllCar ~
-  log.debug("GetAlLCar: "   + carGarageService.getAllCar)
+  log.info("GetAllCar: "   + carGarageService.getAllCar)
 
   // ~ Stop Time Measurement ~
   val duration: Duration = Duration.fromNanos(carGarageService.stopTimeMeasurement.value)
@@ -86,6 +86,8 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
 
   log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
+  //TODO: Remove sleep (wait to show log)
+  Thread.sleep(1000)
   actorSystem.terminate()
 
 }
