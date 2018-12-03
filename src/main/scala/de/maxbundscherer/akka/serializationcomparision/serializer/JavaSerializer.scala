@@ -1,15 +1,14 @@
 package de.maxbundscherer.akka.serializationcomparision.serializer
 
 /**
-  * JsonSerializer
+  * JavaSerializer
   */
-class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
+class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
 
   import de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.CarGarageState
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
-  import java.nio.charset.StandardCharsets
-  import io.circe.generic.auto._, io.circe.parser._, io.circe.syntax._
+  import java.io._
 
   /**
     * Models
@@ -58,9 +57,41 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
   }
 
   /**
-    * Charset
+    * Convert to Java Array of Byte
+    * @param o java.io.Serializable
+    * @return Java Array of Byte
     */
-  final val UTF_8 = StandardCharsets.UTF_8.name()
+  private def toJavaByteArray(o: java.io.Serializable): Array[Byte] = {
+
+    val byteArrayOutputStream : ByteArrayOutputStream = new ByteArrayOutputStream
+    val objectOutputStream    : ObjectOutputStream    = new ObjectOutputStream(byteArrayOutputStream)
+
+    objectOutputStream.writeObject(o)
+
+    objectOutputStream.close()
+    byteArrayOutputStream.close()
+
+    byteArrayOutputStream.toByteArray
+  }
+
+  /**
+    * Convert from Java Array of Byte
+    * @param bytes Java Array of Byte
+    * @tparam ObjectType ClassOf Object
+    * @return Object
+    */
+  private def fromJavaByteArray[ObjectType](bytes: Array[Byte]) : ObjectType = {
+
+    val byteArrayInputStream  : ByteArrayInputStream = new ByteArrayInputStream(bytes)
+    val objectInputStream     : ObjectInputStream    = new ObjectInputStream(byteArrayInputStream)
+
+    val ans: ObjectType = objectInputStream.readObject().asInstanceOf[ObjectType]
+
+    objectInputStream.close()
+    byteArrayInputStream.close()
+
+    ans
+  }
 
   /**
     * Convert from entity to binary
@@ -72,17 +103,17 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
     case o: AddCarEvt         =>
 
       val value: AddCarEvtDb = Converter.FromEntityToDb.addCarEvt(o)
-      value.asJson.toString().getBytes(UTF_8)
+      toJavaByteArray(value)
 
     case o: UpdateCarEvt      =>
 
       val value: UpdateCarEvtDb = Converter.FromEntityToDb.updateCarEvt(o)
-      value.asJson.toString().getBytes(UTF_8)
+      toJavaByteArray(value)
 
     case o: CarGarageState    =>
 
       val value: CarGarageStateDb = Converter.FromEntityToDb.carGarageState(o)
-      value.asJson.toString().getBytes(UTF_8)
+      toJavaByteArray(value)
 
     case any: Any => throw new NotImplementedError("Can not serialize '" + any + "'")
 
@@ -98,17 +129,17 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
 
     case AddCarEvtDbManifest      =>
 
-      val value: AddCarEvtDb = decode[AddCarEvtDb](new String(bytes, UTF_8)).right.get
+      val value: AddCarEvtDb = fromJavaByteArray[AddCarEvtDb](bytes)
       Converter.FromDbToEntity.addCarEvt(value)
 
     case UpdateCarEvtDbManifest   =>
 
-      val value: UpdateCarEvtDb = decode[UpdateCarEvtDb](new String(bytes, UTF_8)).right.get
+      val value: UpdateCarEvtDb = fromJavaByteArray[UpdateCarEvtDb](bytes)
       Converter.FromDbToEntity.updateCarEvt(value)
 
     case CarGarageStateDbManifest =>
 
-      val value: CarGarageStateDb = decode[CarGarageStateDb](new String(bytes, UTF_8)).right.get
+      val value: CarGarageStateDb = fromJavaByteArray[CarGarageStateDb](bytes)
       Converter.FromDbToEntity.carGarageState(value)
 
     case any: Any => throw new NotImplementedError("Can not deserialize '" + any + "'")
