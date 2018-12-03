@@ -13,14 +13,7 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
   /**
     * Models
     */
-  case class CarDb(
-                    id: Int,
-                    horsepower: Int,
-                    name: String
-                  )
-  case class AddCarEvtDb      (value: CarDb)
-  case class UpdateCarEvtDb   (value: CarDb)
-  case class CarGarageStateDb (cars: Vector[CarDb])
+  import de.maxbundscherer.akka.serializationcomparision.persistence.java._
 
   /**
     * Manifests
@@ -36,21 +29,21 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
 
     object FromDbToEntity {
 
-      def car       (dbEntity: CarDb): Car = Car(id = dbEntity.id, horsepower = dbEntity.horsepower, name = dbEntity.name)
+      def car       (dbEntity: CarDb): Car = Car(id = dbEntity.getId, horsepower = dbEntity.getHorsepower, name = dbEntity.getName)
 
-      def addCarEvt     (dbEntity: AddCarEvtDb)     : AddCarEvt      = AddCarEvt      ( value = car(dbEntity.value) )
-      def updateCarEvt  (dbEntity: UpdateCarEvtDb)  : UpdateCarEvt   = UpdateCarEvt   ( value = car(dbEntity.value) )
-      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( cars = dbEntity.cars.map(c => car(c)) )
+      def addCarEvt     (dbEntity: AddCarEvtDb)     : AddCarEvt      = AddCarEvt      ( car(dbEntity.getValue) )
+      def updateCarEvt  (dbEntity: UpdateCarEvtDb)  : UpdateCarEvt   = UpdateCarEvt   ( car(dbEntity.getValue) )
+      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( dbEntity.getCars.toVector.map(c => car(c)) )
 
     }
 
     object FromEntityToDb {
 
-      def car       (entity: Car): CarDb = CarDb(id = entity.id, horsepower = entity.horsepower, name = entity.name)
+      def car       (entity: Car): CarDb = new CarDb(entity.id, entity.horsepower, entity.name)
 
-      def addCarEvt     (entity: AddCarEvt)     : AddCarEvtDb      = AddCarEvtDb      ( value = car(entity.value) )
-      def updateCarEvt  (entity: UpdateCarEvt)  : UpdateCarEvtDb   = UpdateCarEvtDb   ( value = car(entity.value) )
-      def carGarageState(entity: CarGarageState): CarGarageStateDb = CarGarageStateDb ( cars = entity.cars.map(c => car(c)) )
+      def addCarEvt     (entity: AddCarEvt)     : AddCarEvtDb      = new AddCarEvtDb      ( car(entity.value) )
+      def updateCarEvt  (entity: UpdateCarEvt)  : UpdateCarEvtDb   = new UpdateCarEvtDb   ( car(entity.value) )
+      def carGarageState(entity: CarGarageState): CarGarageStateDb = new CarGarageStateDb ( entity.cars.map(c => car(c)).toArray )
 
     }
 

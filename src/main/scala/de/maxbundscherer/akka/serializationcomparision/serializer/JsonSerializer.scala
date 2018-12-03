@@ -14,14 +14,7 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
   /**
     * Models
     */
-  case class CarDb(
-                    id: Int,
-                    horsepower: Int,
-                    name: String
-                  )
-  case class AddCarEvtDb      (value: CarDb)
-  case class UpdateCarEvtDb   (value: CarDb)
-  case class CarGarageStateDb (cars: Vector[CarDb])
+  import de.maxbundscherer.akka.serializationcomparision.persistence.json._
 
   /**
     * Manifests
