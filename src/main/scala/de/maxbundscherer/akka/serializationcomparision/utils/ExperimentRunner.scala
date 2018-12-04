@@ -1,6 +1,7 @@
 package de.maxbundscherer.akka.serializationcomparision.utils
 
 import de.maxbundscherer.akka.serializationcomparision.utils.ExperimentMode.ExperimentMode
+import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate.Car
 
 import akka.actor.ActorSystem
 import akka.event.LoggingAdapter
@@ -21,8 +22,9 @@ object ExperimentMode extends Enumeration {
   * ExperimentRunner
   * @param mode ExperimentMode
   * @param timeout Timeout for asking an actor
+  * @param testSet Vector of Cars (TestSet)
   */
-class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) extends TimeMeasurement {
+class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit timeout: Timeout) extends TimeMeasurement {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
@@ -59,21 +61,18 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) extends 
   // ~ GetAllCar ~
   log.info("GetAllCar: "   + carGarageService.getAllCar)
 
-  // ~ Set Number of Cars ~
-  val numberOfCars: Int = 99000
-
   // ~ Add Loop ~
-  for (i <- 0 to numberOfCars) {
-    log.debug("AddCar: "   + carGarageService.addCar   ( Car(id = i, horsepower = 200+i, name = "BMW F" + 30+i) ))
-  }
+  testSet.foreach(car => {
+    log.debug("AddCar: " + carGarageService.addCar( car ))
+  })
 
   // ~ Simulate Crash ~
   carGarageService.simulateCrash()
 
   // ~ Update Loop ~
-  for (i <- 0 to numberOfCars) {
-    log.debug("UpdateCar: " + carGarageService.updateCar( Car(id = i, horsepower = (200+i)*2, name = "BMW F" + 30+i) ))
-  }
+  testSet.foreach(car => {
+    log.debug("UpdateCar: " + carGarageService.updateCar( car.copy(horsepower = car.horsepower * 2) ))
+  })
 
   // ~ Simulate Crash ~
   carGarageService.simulateCrash()
