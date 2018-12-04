@@ -14,13 +14,6 @@ class ProtobufSerializer extends AbstractSerializer(serializerIdentifier = 9003)
   import de.maxbundscherer.akka.serializationcomparision.persistence.protobuf._
 
   /**
-    * Manifests
-    */
-  final val AddCarEvtDbManifest       = classOf[AddCarEvtDb]      .getName
-  final val UpdateCarEvtDbManifest    = classOf[UpdateCarEvtDb]   .getName
-  final val CarGarageStateDbManifest  = classOf[CarGarageStateDb] .getName
-
-  /**
     * Converter
     */
   object Converter {
@@ -81,17 +74,17 @@ class ProtobufSerializer extends AbstractSerializer(serializerIdentifier = 9003)
     */
   override def fromBinary(bytes: Array[Byte], manifest: String): AnyRef = manifest match {
 
-    case AddCarEvtDbManifest      =>
+    case AddCarEvtManifest      =>
 
       val value: AddCarEvtDb = AddCarEvtDb.parseFrom(bytes)
       Converter.FromDbToEntity.addCarEvt(value)
 
-    case UpdateCarEvtDbManifest   =>
+    case UpdateCarEvtManifest   =>
 
       val value: UpdateCarEvtDb = UpdateCarEvtDb.parseFrom(bytes)
       Converter.FromDbToEntity.updateCarEvt(value)
 
-    case CarGarageStateDbManifest =>
+    case CarGarageStateManifest =>
 
       val value: CarGarageStateDb = CarGarageStateDb.parseFrom(bytes)
       Converter.FromDbToEntity.carGarageState(value)

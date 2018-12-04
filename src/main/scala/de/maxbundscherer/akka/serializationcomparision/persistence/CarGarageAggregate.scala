@@ -34,7 +34,4 @@ object CarGarageAggregate {
   case class GetAllCarCmd()                   extends CarGarageCmd
   case class GetAllCar(value: Vector[Car])    extends CarGarageResponse
 
-  case class StopTimeMeasurementCmd()         extends CarGarageCmd
-  case class StopTimeMeasurement(value: Long) extends CarGarageResponse
-
 }

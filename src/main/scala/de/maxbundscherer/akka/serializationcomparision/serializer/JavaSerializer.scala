@@ -16,13 +16,6 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
   import de.maxbundscherer.akka.serializationcomparision.persistence.java._
 
   /**
-    * Manifests
-    */
-  final val AddCarEvtDbManifest       = classOf[AddCarEvtDb]      .getName
-  final val UpdateCarEvtDbManifest    = classOf[UpdateCarEvtDb]   .getName
-  final val CarGarageStateDbManifest  = classOf[CarGarageStateDb] .getName
-
-  /**
     * Converter
     */
   object Converter {
@@ -120,17 +113,17 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
     */
   override def fromBinary(bytes: Array[Byte], manifest: String): AnyRef = manifest match {
 
-    case AddCarEvtDbManifest      =>
+    case AddCarEvtManifest      =>
 
       val value: AddCarEvtDb = fromJavaByteArray[AddCarEvtDb](bytes)
       Converter.FromDbToEntity.addCarEvt(value)
 
-    case UpdateCarEvtDbManifest   =>
+    case UpdateCarEvtManifest   =>
 
       val value: UpdateCarEvtDb = fromJavaByteArray[UpdateCarEvtDb](bytes)
       Converter.FromDbToEntity.updateCarEvt(value)
 
-    case CarGarageStateDbManifest =>
+    case CarGarageStateManifest =>
 
       val value: CarGarageStateDb = fromJavaByteArray[CarGarageStateDb](bytes)
       Converter.FromDbToEntity.carGarageState(value)

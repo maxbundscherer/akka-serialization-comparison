@@ -35,8 +35,6 @@ class CarGarageService(actorSystem: ActorSystem, actorNamePostfix: String)(impli
   def addCar   (value: Car)         : CarGarageResponse   = askCarGarageActor( AddCarCmd(value) )
   def updateCar(value: Car)         : CarGarageResponse   = askCarGarageActor( UpdateCarCmd(value) )
   def getAllCar                     : CarGarageResponse   = askCarGarageActor( GetAllCarCmd() )
-  def startTimeMeasurement          : CarGarageResponse   = askCarGarageActor( StartTimeMeasurementCmd() )
-  def stopTimeMeasurement           : StopTimeMeasurement = askCarGarageActor( StopTimeMeasurementCmd() ).asInstanceOf[StopTimeMeasurement]
   def simulateCrash()               : Unit                = carGarageActor ! SimulateCrashCmd()
 
 }

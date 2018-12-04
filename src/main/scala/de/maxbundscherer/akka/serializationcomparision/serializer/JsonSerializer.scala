@@ -17,13 +17,6 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
   import de.maxbundscherer.akka.serializationcomparision.persistence.json._
 
   /**
-    * Manifests
-    */
-  final val AddCarEvtDbManifest       = classOf[AddCarEvtDb]      .getName
-  final val UpdateCarEvtDbManifest    = classOf[UpdateCarEvtDb]   .getName
-  final val CarGarageStateDbManifest  = classOf[CarGarageStateDb] .getName
-
-  /**
     * Converter
     */
   object Converter {
@@ -89,17 +82,17 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
     */
   override def fromBinary(bytes: Array[Byte], manifest: String): AnyRef = manifest match {
 
-    case AddCarEvtDbManifest      =>
+    case AddCarEvtManifest      =>
 
       val value: AddCarEvtDb = decode[AddCarEvtDb](new String(bytes, UTF_8)).right.get
       Converter.FromDbToEntity.addCarEvt(value)
 
-    case UpdateCarEvtDbManifest   =>
+    case UpdateCarEvtManifest   =>
 
       val value: UpdateCarEvtDb = decode[UpdateCarEvtDb](new String(bytes, UTF_8)).right.get
       Converter.FromDbToEntity.updateCarEvt(value)
 
-    case CarGarageStateDbManifest =>
+    case CarGarageStateManifest =>
 
       val value: CarGarageStateDb = decode[CarGarageStateDb](new String(bytes, UTF_8)).right.get
       Converter.FromDbToEntity.carGarageState(value)

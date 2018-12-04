@@ -22,7 +22,7 @@ object ExperimentMode extends Enumeration {
   * @param mode ExperimentMode
   * @param timeout Timeout for asking an actor
   */
-class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
+class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) extends TimeMeasurement {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
@@ -54,7 +54,7 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
   log.info(s"--- Start Experiment (modeValue='$modeValue') ---")
 
   // ~ Start Time Measurement ~
-  log.debug("StartTimeMeasurement: " + carGarageService.startTimeMeasurement)
+  startTimeMeasurement()
 
   // ~ GetAllCar ~
   log.info("GetAllCar: "   + carGarageService.getAllCar)
@@ -67,20 +67,22 @@ class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) {
     log.debug("AddCar: "   + carGarageService.addCar   ( Car(id = i, horsepower = 200+i, name = "BMW F" + 30+i) ))
   }
 
+  // ~ Simulate Crash ~
+  carGarageService.simulateCrash()
+
   // ~ Update Loop ~
   for (i <- 0 to numberOfCars) {
     log.debug("UpdateCar: " + carGarageService.updateCar( Car(id = i, horsepower = (200+i)*2, name = "BMW F" + 30+i) ))
   }
 
   // ~ Simulate Crash ~
-  //TODO: Simulate Crash and save time
-  //carGarageService.simulateCrash()
+  carGarageService.simulateCrash()
 
   // ~ GetAllCar ~
   log.debug("GetAllCar: "   + carGarageService.getAllCar)
 
   // ~ Stop Time Measurement ~
-  val duration: Duration = Duration.fromNanos(carGarageService.stopTimeMeasurement.value)
+  val duration: Duration = Duration.fromNanos(stopTimeMeasurement())
 
   log.info("StopTimeMeasurement: " + duration.toSeconds + " seconds")
 

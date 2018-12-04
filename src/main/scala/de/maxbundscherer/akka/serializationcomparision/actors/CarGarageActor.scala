@@ -1,7 +1,5 @@
 package de.maxbundscherer.akka.serializationcomparision.actors
 
-import de.maxbundscherer.akka.serializationcomparision.utils.TimeMeasurement
-
 import akka.actor.{ActorLogging, Props}
 import akka.persistence.{PersistentActor, RecoveryCompleted, SaveSnapshotSuccess, SnapshotOffer}
 
@@ -14,7 +12,7 @@ object CarGarageActor {
 
   // ~ Settings ~
   final val persistenceIdPrefix            : String = "carGarageActor"
-  final val snapshotInterval               : Int    = 1000
+  final val snapshotInterval               : Int    = 5000
   final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
@@ -31,7 +29,7 @@ object CarGarageActor {
   * CarGarageActor
   * @param actorNamePostfix String
   */
-private class CarGarageActor(actorNamePostfix: String) extends PersistentActor with ActorLogging with TimeMeasurement {
+private class CarGarageActor(actorNamePostfix: String) extends PersistentActor with ActorLogging {
 
   import CarGarageActor._
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
@@ -119,15 +117,6 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     case _: GetAllCarCmd =>
 
       tellSender( GetAllCar(state.cars) )
-
-    case _: StartTimeMeasurementCmd =>
-
-      startTimeMeasurement()
-      tellSender( CarGarageSuccess() )
-
-    case _: StopTimeMeasurementCmd =>
-
-      tellSender( StopTimeMeasurement(value = stopTimeMeasurement()) )
 
     case _: SimulateCrashCmd =>
 
