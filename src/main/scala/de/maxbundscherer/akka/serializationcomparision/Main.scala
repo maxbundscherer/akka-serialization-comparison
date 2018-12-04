@@ -1,6 +1,17 @@
 package de.maxbundscherer.akka.serializationcomparision
 
+import de.maxbundscherer.akka.serializationcomparision.utils.{ExperimentMode, ExperimentRunner}
+
+import akka.util.Timeout
+import scala.concurrent.duration._
+
 object Main extends App {
 
-  println("Hello World!")
+  private implicit val timeout          : Timeout        = Timeout(50 seconds)
+
+  // ~ Run Experiments ~
+  new ExperimentRunner( ExperimentMode.JAVA )
+  new ExperimentRunner( ExperimentMode.JSON )
+  new ExperimentRunner( ExperimentMode.PROTOBUF )
+
 }
