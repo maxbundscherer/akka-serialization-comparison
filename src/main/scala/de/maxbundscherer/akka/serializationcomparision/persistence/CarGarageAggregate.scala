@@ -27,7 +27,6 @@ object CarGarageAggregate {
   case class CarAlreadyExists()               extends CarGarageResponse
 
   // ~ Request  ~
-  case class StartTimeMeasurementCmd()        extends CarGarageCmd
   case class SimulateCrashCmd()               extends CarGarageCmd
 
   // ~ Request and Response
