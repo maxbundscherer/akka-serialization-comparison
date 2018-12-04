@@ -13,7 +13,7 @@ object Main extends App {
   private implicit val timeout          : Timeout        = Timeout(50 seconds)
 
   // ~ Set Number of Cars ~
-  val numberOfCars: Int = 20
+  val numberOfCars: Int = 50000
 
   // ~ Generate testSet ~
   var testSet: Vector[Car] = Vector.empty
