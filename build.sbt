@@ -28,3 +28,15 @@ libraryDependencies += "com.thesamet.scalapb" %% "scalapb-runtime" % scalapb.com
 PB.targets in Compile := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value
 )
+
+resolvers += "Sonatype OSS Snapshots" at
+  "https://oss.sonatype.org/content/repositories/snapshots"
+
+libraryDependencies += "com.storm-enroute" %% "scalameter" % "0.8.2"
+
+parallelExecution in Test := false
+
+testFrameworks += new TestFramework(
+  "org.scalameter.ScalaMeterFramework")
+
+logBuffered := false
