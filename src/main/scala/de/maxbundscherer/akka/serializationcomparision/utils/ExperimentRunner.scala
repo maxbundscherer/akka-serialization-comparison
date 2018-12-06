@@ -24,7 +24,7 @@ object ExperimentMode extends Enumeration {
   * @param timeout Timeout for asking an actor
   * @param testSet Vector of Cars (TestSet)
   */
-class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit timeout: Timeout) extends TimeMeasurement {
+class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit timeout: Timeout) extends SimpleTimeMeasurement {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
 
@@ -79,13 +79,12 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit time
   // ~ GetAllCar ~
   log.debug("GetAllCar: "   + carGarageService.getAllCar)
 
-  // ~ Stop Time Measurement ~
+  // ~ Stop Time Measurement and Print Result ~
   val duration: Duration = Duration.fromNanos(stopTimeMeasurement())
-
   log.info("StopTimeMeasurement: " + duration.toSeconds + " seconds")
-
   log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
+  // ~ End Experiment ~
   //Add Thread sleep (show logger output)
   Thread.sleep(1000)
   actorSystem.terminate()

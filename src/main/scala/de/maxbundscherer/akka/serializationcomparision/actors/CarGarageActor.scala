@@ -1,18 +1,20 @@
 package de.maxbundscherer.akka.serializationcomparision.actors
 
+import de.maxbundscherer.akka.serializationcomparision.utils.Configuration
+
 import akka.actor.{ActorLogging, Props}
 import akka.persistence.{PersistentActor, RecoveryCompleted, SaveSnapshotSuccess, SnapshotOffer}
 
 /**
   * CarGarageActor (Singleton)
   */
-object CarGarageActor {
+object CarGarageActor extends Configuration {
 
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
   // ~ Settings ~
   final val persistenceIdPrefix            : String = "carGarageActor"
-  final val snapshotInterval               : Int    = 5000
+  final val snapshotInterval               : Int    = Config.ExperimentMode.actorSnapshotInterval
   final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
