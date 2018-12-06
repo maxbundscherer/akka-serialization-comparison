@@ -21,14 +21,14 @@ trait Configuration {
 
     object ExperimentMode {
 
-      private val config: Config = paramsConfig.getConfig("testSet")
+      private val config: Config = paramsConfig.getConfig("experimentMode")
 
       val timeoutInSeconds        : Int = config.getInt("timeoutInSeconds")
     }
 
     object BenchmarkMode {
 
-      private val config: Config = paramsConfig.getConfig("testSet")
+      private val config: Config = paramsConfig.getConfig("benchmarkMode")
 
       val testSizesFrom           : Int = config.getInt("testSizesFrom")
       val testSizesUpTo           : Int = config.getInt("testSizesUpTo")

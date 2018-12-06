@@ -35,3 +35,6 @@ libraryDependencies += "com.storm-enroute" %% "scalameter" % "0.8.2"
 testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework")
 parallelExecution in Test := false
 logBuffered := false
+
+// ~ Define alias for sbt ~
+addCommandAlias("mixedMode", "; clean; run; clean; test")

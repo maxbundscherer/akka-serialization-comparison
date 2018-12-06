@@ -17,6 +17,7 @@ This project **compares different serializers** can be used in akka projects (fo
 
 ### Requirements
 
+- [Java JDK](https://www.oracle.com/technetwork/java/javase/) (jdk1.8.0_144 or higher)
 - [Scala](https://www.scala-lang.org/) (v. 2.12.7 or higher - normally shipped with sbt)
 - [Sbt](https://www.scala-sbt.org/) (v. 1.2.6 or higher)
 
@@ -46,8 +47,21 @@ First of all you should read and understand the test params. They are located in
 3. Run command ``sbt clean run`` (clean database)
 4. Or run command ``sbt run`` (non clean database)
 
+**Important**: There are thrown RuntimeExceptions (Simulate crash): This behavior is desirable.
+
 ### Start ``BenchmarkMode``
 
 1. Checkout project
 2. Go to ``./`` (project root folder)
-3. Run command ``sbt test``
+3. Run command ``sbt clean test``
+
+## Advanced
+
+To run both modes after each other you can run command ``sbt mixedMode``
+
+### Increase default sbt memory-params
+
+To get better results increase your default sbt memory-params with: ``export SBT_OPTS="-Xms1G -Xmx8G"``
+
+- ``Xms`` specifies the initial memory allocation pool.
+- ``Xmx`` specifies the maximum memory allocation pool.
