@@ -22,10 +22,19 @@ This project **compares different serializers** can be used in akka projects (fo
 - [Port of LevelDB to Java](https://github.com/dain/leveldb) (v. 0.7)
 - [LevelDB Java Native Interface](https://github.com/fusesource/leveldbjni) (v. 1.8)
 - [Circe](https://circe.github.io/circe/) (v. 0.10.0)
+- [ScalaMeter](https://scalameter.github.io/) (v. 0.8.2)
 
 ### Let´s get started
+
+#### Normal run with ExperimentRunner
 
 1. Checkout project
 2. Go to ``./`` (project root folder)
 3. Run command ``sbt clean run`` (clean database)
 4. Or run command ``sbt run`` (non clean database)
+
+#### Benchmark run with ScalaMeter
+
+1. Checkout project
+2. Go to ``./`` (project root folder)
+3. Run command ``sbt test``

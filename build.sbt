@@ -29,14 +29,9 @@ PB.targets in Compile := Seq(
   scalapb.gen() -> (sourceManaged in Compile).value
 )
 
-resolvers += "Sonatype OSS Snapshots" at
-  "https://oss.sonatype.org/content/repositories/snapshots"
-
+// ~ Add ScalaMeter and trigger in test ~
+resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
 libraryDependencies += "com.storm-enroute" %% "scalameter" % "0.8.2"
-
+testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework")
 parallelExecution in Test := false
-
-testFrameworks += new TestFramework(
-  "org.scalameter.ScalaMeterFramework")
-
 logBuffered := false
