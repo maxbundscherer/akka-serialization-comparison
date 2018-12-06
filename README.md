@@ -17,7 +17,7 @@ This project **compares different serializers** can be used in akka projects (fo
 
 ### Requirements
 
-- [Java JDK](https://www.oracle.com/technetwork/java/javase/) (jdk1.8.0_144 or higher)
+- [Java JDK](https://www.oracle.com/technetwork/java/javase/) (JDK 8)
 - [Scala](https://www.scala-lang.org/) (v. 2.12.7 or higher - normally shipped with sbt)
 - [Sbt](https://www.scala-sbt.org/) (v. 1.2.6 or higher)
 
