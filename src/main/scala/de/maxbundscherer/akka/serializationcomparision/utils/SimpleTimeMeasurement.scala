@@ -1,6 +1,6 @@
 package de.maxbundscherer.akka.serializationcomparision.utils
 
-trait TimeMeasurement {
+trait SimpleTimeMeasurement {
 
   private final var startTime : Long  = System.nanoTime()
 

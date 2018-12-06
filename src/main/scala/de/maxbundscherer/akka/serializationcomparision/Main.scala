@@ -1,26 +1,19 @@
 package de.maxbundscherer.akka.serializationcomparision
 
-import de.maxbundscherer.akka.serializationcomparision.utils.{ExperimentMode, ExperimentRunner}
+import de.maxbundscherer.akka.serializationcomparision.utils.{Configuration, ExperimentMode, ExperimentRunner}
 
 import akka.util.Timeout
 import scala.concurrent.duration._
-import scala.util.Random
 
-object Main extends App {
+object Main extends App with Configuration {
 
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate.Car
+  import de.maxbundscherer.akka.serializationcomparision.utils.TestSet
 
-  private implicit val timeout          : Timeout        = Timeout(50 seconds)
-
-  // ~ Set Number of Cars ~
-  val numberOfCars: Int = 50000
+  private implicit val timeout          : Timeout        = Timeout(Config.ExperimentMode.timeoutInSeconds seconds)
 
   // ~ Generate testSet ~
-  var testSet: Vector[Car] = Vector.empty
-
-  for (i <- 0 until numberOfCars) {
-    testSet = testSet :+ Car(id = i, horsepower = 100 + i, name = Random.alphanumeric.take(5 + Random.nextInt(30)).mkString)
-  }
+  var testSet: Vector[Car] = TestSet.testSetVector
 
   // ~ Run Experiments ~
   new ExperimentRunner( ExperimentMode.JAVA,      testSet )
