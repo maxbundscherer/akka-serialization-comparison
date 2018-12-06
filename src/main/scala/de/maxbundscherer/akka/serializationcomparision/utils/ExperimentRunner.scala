@@ -27,7 +27,6 @@ object ExperimentMode extends Enumeration {
 class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit timeout: Timeout) extends TimeMeasurement {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
-  import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
   /**
     * ~ Init experiment (start akkaSystem and load system config) ~
@@ -87,7 +86,7 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit time
 
   log.info(s"--- End Experiment (modeValue='$modeValue') ---")
 
-  //TODO: Remove sleep (wait to show log)
+  //Add Thread sleep (show logger output)
   Thread.sleep(1000)
   actorSystem.terminate()
 

@@ -1,16 +1,16 @@
 package de.maxbundscherer.akka.serializationcomparision
 
-import de.maxbundscherer.akka.serializationcomparision.utils.{ExperimentMode, ExperimentRunner}
+import de.maxbundscherer.akka.serializationcomparision.utils.{Configuration, ExperimentMode, ExperimentRunner}
 
 import akka.util.Timeout
 import scala.concurrent.duration._
 
-object Main extends App {
+object Main extends App with Configuration {
 
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate.Car
   import de.maxbundscherer.akka.serializationcomparision.utils.TestSet
 
-  private implicit val timeout          : Timeout        = Timeout(5000 seconds)
+  private implicit val timeout          : Timeout        = Timeout(Config.ExperimentMode.timeoutInSeconds seconds)
 
   // ~ Generate testSet ~
   var testSet: Vector[Car] = TestSet.testSetVector

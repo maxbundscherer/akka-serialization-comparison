@@ -1,6 +1,7 @@
 package de.maxbundscherer.akka.serializationcomparision
 
 import de.maxbundscherer.akka.serializationcomparision.serializer.AbstractSerializer
+import de.maxbundscherer.akka.serializationcomparision.utils.Configuration
 
 import org.scalameter.api._
 
@@ -8,7 +9,7 @@ import org.scalameter.api._
   * Abstract Benchmark Test
   * @param testName String Name of Test
   */
-abstract class AbstractTest(testName: String) extends Bench.LocalTime {
+abstract class AbstractTest(testName: String) extends Bench.LocalTime with Configuration {
 
   // ~ Models ~
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
@@ -17,7 +18,7 @@ abstract class AbstractTest(testName: String) extends Bench.LocalTime {
   /**
     * Configure Test
     */
-  val testSizes: Gen[Int] = Gen.range(s"size-$testName")(10000, 500000, 100)
+  val testSizes: Gen[Int] = Gen.range(s"size-$testName")(Config.BenchmarkMode.testSizesFrom, Config.BenchmarkMode.testSizesUpTo, Config.BenchmarkMode.testSizesHop)
 
   val testRanges: Gen[Range] = for {
     size <- testSizes
