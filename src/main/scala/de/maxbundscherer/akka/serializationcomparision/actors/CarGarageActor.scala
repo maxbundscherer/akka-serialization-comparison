@@ -60,7 +60,7 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
 
     case SnapshotOffer(_, snapshot: CarGarageState)  =>
 
-      log.debug(s"Restore from snapshot ('$snapshot')")
+      log.debug(s"Restore from snapshot")
       state = snapshot
 
     case _: RecoveryCompleted =>
@@ -173,7 +173,7 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
         lastSequenceNr != 0
     ) {
 
-      log.debug(s"Do snapshot ('$state') now")
+      log.debug(s"Do snapshot now")
       saveSnapshot(state)
     }
 

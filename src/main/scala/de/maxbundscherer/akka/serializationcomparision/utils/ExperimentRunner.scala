@@ -58,11 +58,11 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit time
   startTimeMeasurement()
 
   // ~ GetAllCar ~
-  log.info("GetAllCar: "   + carGarageService.getAllCar)
+  carGarageService.getAllCar
 
   // ~ Add Loop ~
   testSet.foreach(car => {
-    log.debug("AddCar: " + carGarageService.addCar( car ))
+    carGarageService.addCar( car )
   })
 
   // ~ Simulate Crash ~
@@ -70,14 +70,14 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit time
 
   // ~ Update Loop ~
   testSet.foreach(car => {
-    log.debug("UpdateCar: " + carGarageService.updateCar( car.copy(horsepower = car.horsepower * 2) ))
+    carGarageService.updateCar( car.copy(horsepower = car.horsepower * 2) )
   })
 
   // ~ Simulate Crash ~
   carGarageService.simulateCrash()
 
   // ~ GetAllCar ~
-  log.debug("GetAllCar: "   + carGarageService.getAllCar)
+  carGarageService.getAllCar
 
   // ~ Stop Time Measurement and Print Result ~
   val duration: Duration = Duration.fromNanos(stopTimeMeasurement())
