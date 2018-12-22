@@ -11,6 +11,12 @@ import org.scalameter.api._
   */
 abstract class AbstractTest(testName: String) extends Bench.LocalTime with Configuration {
 
+  /**
+    * Print time for log (pipe log to file)
+    */
+  import de.maxbundscherer.akka.serializationcomparision.utils.TimePrinter
+  TimePrinter.printActualTimeForLog(s"Start MicroBench ($testName)")
+
   // ~ Models ~
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
   import de.maxbundscherer.akka.serializationcomparision.utils.TestSet
