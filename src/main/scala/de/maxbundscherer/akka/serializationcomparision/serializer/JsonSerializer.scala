@@ -24,20 +24,28 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
     object FromDbToEntity {
 
       def car       (dbEntity: CarDb): Car = Car(id = dbEntity.id, horsepower = dbEntity.horsepower, name = dbEntity.name)
+      def complexCar(dbEntity: ComplexCarDb): ComplexCar = ComplexCar(id = dbEntity.id, horsepower = dbEntity.horsepower, name = dbEntity.name, fuelConsumption = dbEntity.fuelConsumption, dieselEngine = dbEntity.dieselEngine, seatAdjustment = dbEntity.seatAdjustment, fuelTank = dbEntity.fuelTank, brakingDistance = dbEntity.brakingDistance, notes = dbEntity.notes)
 
       def addCarEvt     (dbEntity: AddCarEvtDb)     : AddCarEvt      = AddCarEvt      ( value = car(dbEntity.value) )
       def updateCarEvt  (dbEntity: UpdateCarEvtDb)  : UpdateCarEvt   = UpdateCarEvt   ( value = car(dbEntity.value) )
-      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( cars = dbEntity.cars.map(c => car(c)) )
+      def addComplexCarEvt     (dbEntity: AddComplexCarEvtDb)     : AddComplexCarEvt      = AddComplexCarEvt      ( value = complexCar(dbEntity.value) )
+      def updateComplexCarEvt  (dbEntity: UpdateComplexCarEvtDb)  : UpdateComplexCarEvt   = UpdateComplexCarEvt   ( value = complexCar(dbEntity.value) )
+
+      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( cars = dbEntity.cars.map(c => car(c)).toVector, complexCars = dbEntity.complexCars.map(c => complexCar(c)).toVector )
 
     }
 
     object FromEntityToDb {
 
       def car       (entity: Car): CarDb = CarDb(id = entity.id, horsepower = entity.horsepower, name = entity.name)
+      def complexCar(entity: ComplexCar): ComplexCarDb = ComplexCarDb(id = entity.id, horsepower = entity.horsepower, name = entity.name, fuelConsumption = entity.fuelConsumption, dieselEngine = entity.dieselEngine, seatAdjustment = entity.seatAdjustment, fuelTank = entity.fuelTank, brakingDistance = entity.brakingDistance, notes = entity.notes)
 
       def addCarEvt     (entity: AddCarEvt)     : AddCarEvtDb      = AddCarEvtDb      ( value = car(entity.value) )
       def updateCarEvt  (entity: UpdateCarEvt)  : UpdateCarEvtDb   = UpdateCarEvtDb   ( value = car(entity.value) )
-      def carGarageState(entity: CarGarageState): CarGarageStateDb = CarGarageStateDb ( cars = entity.cars.map(c => car(c)) )
+      def addComplexCarEvt     (entity: AddComplexCarEvt)     : AddComplexCarEvtDb      = AddComplexCarEvtDb      ( value = complexCar(entity.value) )
+      def updateComplexCarEvt  (entity: UpdateComplexCarEvt)  : UpdateComplexCarEvtDb   = UpdateComplexCarEvtDb   ( value = complexCar(entity.value) )
+
+      def carGarageState(entity: CarGarageState): CarGarageStateDb = CarGarageStateDb ( cars = entity.cars.map(c => car(c)), complexCars = entity.complexCars.map(c => complexCar(c)))
 
     }
 
@@ -63,6 +71,16 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
     case o: UpdateCarEvt      =>
 
       val value: UpdateCarEvtDb = Converter.FromEntityToDb.updateCarEvt(o)
+      value.asJson.toString().getBytes(UTF_8)
+
+    case o: AddComplexCarEvt         =>
+
+      val value: AddComplexCarEvtDb = Converter.FromEntityToDb.addComplexCarEvt(o)
+      value.asJson.toString().getBytes(UTF_8)
+
+    case o: UpdateComplexCarEvt      =>
+
+      val value: UpdateComplexCarEvtDb = Converter.FromEntityToDb.updateComplexCarEvt(o)
       value.asJson.toString().getBytes(UTF_8)
 
     case o: CarGarageState    =>
@@ -91,6 +109,16 @@ class JsonSerializer extends AbstractSerializer(serializerIdentifier = 9002) {
 
       val value: UpdateCarEvtDb = decode[UpdateCarEvtDb](new String(bytes, UTF_8)).right.get
       Converter.FromDbToEntity.updateCarEvt(value)
+
+    case AddComplexCarEvtManifest      =>
+
+      val value: AddComplexCarEvtDb = decode[AddComplexCarEvtDb](new String(bytes, UTF_8)).right.get
+      Converter.FromDbToEntity.addComplexCarEvt(value)
+
+    case UpdateComplexCarEvtManifest   =>
+
+      val value: UpdateComplexCarEvtDb = decode[UpdateComplexCarEvtDb](new String(bytes, UTF_8)).right.get
+      Converter.FromDbToEntity.updateComplexCarEvt(value)
 
     case CarGarageStateManifest =>
 
