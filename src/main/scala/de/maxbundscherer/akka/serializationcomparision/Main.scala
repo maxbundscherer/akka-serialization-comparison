@@ -14,7 +14,7 @@ object Main extends App with Configuration {
 
   // ~ Generate testSet ~
   var testSet         : Vector[Car]        = TestSet.testSetVector
-  var complexTestSet  : Vector[ComplexCar] = TestSet.testSetComplexVector
+  var complexTestSet  : Vector[ComplexCar] = TestSet.complexTestSetVector
 
   // ~ Run Experiments ~
   new ExperimentRunner( ExperimentMode.JAVA,      testSet, complexTestSet  )

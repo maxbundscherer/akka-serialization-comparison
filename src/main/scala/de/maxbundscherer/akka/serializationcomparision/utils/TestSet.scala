@@ -35,7 +35,7 @@ object TestSet extends Configuration {
   //~ Generated TestSet ~
   val testSetVector : Vector[Car] = testSetData
   val testSetArray  : Array[Car]  = testSetData.toArray
-  val testSetComplexVector : Vector[ComplexCar] = complexTestSetData
-  val testSetComplexArray  : Array[ComplexCar]  = complexTestSetData.toArray
+  val complexTestSetVector : Vector[ComplexCar] = complexTestSetData
+  val complexTestSetArray  : Array[ComplexCar]  = complexTestSetData.toArray
 
 }
