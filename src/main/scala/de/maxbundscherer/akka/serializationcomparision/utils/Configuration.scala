@@ -15,8 +15,9 @@ trait Configuration {
 
       private val config: Config = paramsConfig.getConfig("testSet")
 
-      val numberOfTestCars        : Int = config.getInt("numberOfTestCars")
-      val carNameStringMaxLength  : Int = config.getInt("carNameStringMaxLength")
+      val numberOfTestCars                : Int = config.getInt("numberOfTestCars")
+      val carNameStringMaxLength          : Int = config.getInt("carNameStringMaxLength")
+      val complexCarNotesStringMaxLength  : Int = config.getInt("complexCarNotesStringMaxLength")
     }
 
     object ExperimentMode {
