@@ -1,7 +1,7 @@
 package de.maxbundscherer.akka.serializationcomparision.utils
 
 import de.maxbundscherer.akka.serializationcomparision.utils.ExperimentMode.ExperimentMode
-import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate.Car
+import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate.{Car, ComplexCar}
 
 import akka.actor.ActorSystem
 import akka.event.LoggingAdapter
@@ -24,7 +24,7 @@ object ExperimentMode extends Enumeration {
   * @param timeout Timeout for asking an actor
   * @param testSet Vector of Cars (TestSet)
   */
-class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit timeout: Timeout) extends SimpleTimeMeasurement {
+class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car], complexTestSet: Vector[ComplexCar])(implicit timeout: Timeout) extends SimpleTimeMeasurement {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
 
@@ -59,10 +59,14 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit time
 
   // ~ GetAllCar ~
   carGarageService.getAllCar
+  carGarageService.getAllComplexCar
 
   // ~ Add Loop ~
   testSet.foreach(car => {
     carGarageService.addCar( car )
+  })
+  complexTestSet.foreach(car => {
+    carGarageService.addComplexCar( car )
   })
 
   // ~ Simulate Crash ~
@@ -72,12 +76,16 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car])(implicit time
   testSet.foreach(car => {
     carGarageService.updateCar( car.copy(horsepower = car.horsepower * 2) )
   })
+  complexTestSet.foreach(car => {
+    carGarageService.updateComplexCar( car.copy(horsepower = car.horsepower * 2) )
+  })
 
   // ~ Simulate Crash ~
   carGarageService.simulateCrash()
 
   // ~ GetAllCar ~
   carGarageService.getAllCar
+  carGarageService.getAllComplexCar
 
   // ~ Stop Time Measurement and Print Result ~
   val duration: Duration = Duration.fromNanos(stopTimeMeasurement())

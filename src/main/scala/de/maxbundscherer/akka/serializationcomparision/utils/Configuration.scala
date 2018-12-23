@@ -15,8 +15,9 @@ trait Configuration {
 
       private val config: Config = paramsConfig.getConfig("testSet")
 
-      val numberOfTestCars        : Int = config.getInt("numberOfTestCars")
-      val carNameStringMaxLength  : Int = config.getInt("carNameStringMaxLength")
+      val numberOfTestCars                : Int = config.getInt("numberOfTestCars")
+      val carNameStringMaxLength          : Int = config.getInt("carNameStringMaxLength")
+      val complexCarNotesStringMaxLength  : Int = config.getInt("complexCarNotesStringMaxLength")
     }
 
     object ExperimentMode {
@@ -34,6 +35,8 @@ trait Configuration {
       val testSizesFrom           : Int = config.getInt("testSizesFrom")
       val testSizesUpTo           : Int = config.getInt("testSizesUpTo")
       val testSizesHop            : Int = config.getInt("testSizesHop")
+      val testCar                 : Boolean = config.getBoolean("testCar")
+      val testComplexCar          : Boolean = config.getBoolean("testComplexCar")
     }
 
   }

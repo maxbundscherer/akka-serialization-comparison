@@ -58,10 +58,21 @@ abstract class AbstractTest(testName: String) extends Bench.LocalTime with Confi
     */
   private def triggerSingleSerializeAndDeserialize(i: Int): Unit = {
 
-    val testEvt         : AddCarEvt = AddCarEvt( TestSet.testSetArray(i % TestSet.testSetArray.length) )
+    if(Config.BenchmarkMode.testCar) {
 
-    val serializedEvt   : Array[Byte] = serializeAddCarEvt(testEvt)
-    val deserializedEvt : AddCarEvt   = deserializeAddCarEvt(serializedEvt)
+      val testEvt: AddCarEvt = AddCarEvt( TestSet.testSetArray(i % TestSet.testSetArray.length) )
+      val serializedEvt   : Array[Byte] = serializeAddCarEvt(testEvt)
+      val deserializedEvt : AddCarEvt   = deserializeAddCarEvt(serializedEvt)
+
+    }
+
+    if(Config.BenchmarkMode.testComplexCar) {
+
+      val testEvt: AddComplexCarEvt = AddComplexCarEvt( TestSet.complexTestSetArray(i % TestSet.complexTestSetArray.length) )
+      val serializedEvt   : Array[Byte]       = serializeAddComplexCarEvt(testEvt)
+      val deserializedEvt : AddComplexCarEvt  = deserializeAddComplexCarEvt(serializedEvt)
+
+    }
 
   }
 
@@ -78,5 +89,20 @@ abstract class AbstractTest(testName: String) extends Bench.LocalTime with Confi
     * @return AddCarEvt
     */
   private def deserializeAddCarEvt(value: Array[Byte]): AddCarEvt = serializer.fromBinary(value, serializer.AddCarEvtManifest).asInstanceOf[AddCarEvt]
+
+  /**
+    * Serialize AddComplexCarEvt
+    * @param value AddComplexCarEvt
+    * @return Array of Bytes
+    */
+  private def serializeAddComplexCarEvt(value: AddComplexCarEvt): Array[Byte] = serializer.toBinary(value)
+
+  /**
+    * Deserialize AddComplexCarEvt
+    * @param value Array of Bytes
+    * @return AddComplexCarEvt
+    */
+  private def deserializeAddComplexCarEvt(value: Array[Byte]): AddComplexCarEvt = serializer.fromBinary(value, serializer.AddComplexCarEvtManifest).asInstanceOf[AddComplexCarEvt]
+
 
 }

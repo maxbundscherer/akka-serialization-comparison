@@ -32,9 +32,12 @@ class CarGarageService(actorSystem: ActorSystem, actorNamePostfix: String)(impli
   /*
    * ~ Send Cmd ~
    */
-  def addCar   (value: Car)         : CarGarageResponse   = askCarGarageActor( AddCarCmd(value) )
-  def updateCar(value: Car)         : CarGarageResponse   = askCarGarageActor( UpdateCarCmd(value) )
-  def getAllCar                     : CarGarageResponse   = askCarGarageActor( GetAllCarCmd() )
-  def simulateCrash()               : Unit                = carGarageActor ! SimulateCrashCmd()
+  def addCar   (value: Car)               : CarGarageResponse   = askCarGarageActor( AddCarCmd(value) )
+  def updateCar(value: Car)               : CarGarageResponse   = askCarGarageActor( UpdateCarCmd(value) )
+  def addComplexCar   (value: ComplexCar) : CarGarageResponse   = askCarGarageActor( AddComplexCarCmd(value) )
+  def updateComplexCar(value: ComplexCar) : CarGarageResponse   = askCarGarageActor( UpdateComplexCarCmd(value) )
+  def getAllCar                           : CarGarageResponse   = askCarGarageActor( GetAllCarCmd() )
+  def getAllComplexCar                    : CarGarageResponse   = askCarGarageActor( GetAllComplexCarCmd() )
+  def simulateCrash()                     : Unit                = carGarageActor ! SimulateCrashCmd()
 
 }

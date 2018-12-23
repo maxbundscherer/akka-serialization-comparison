@@ -23,20 +23,28 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
     object FromDbToEntity {
 
       def car       (dbEntity: CarDb): Car = Car(id = dbEntity.getId, horsepower = dbEntity.getHorsepower, name = dbEntity.getName)
+      def complexCar(dbEntity: ComplexCarDb): ComplexCar = ComplexCar(id = dbEntity.getId, horsepower = dbEntity.getHorsepower, name = dbEntity.getName, fuelConsumption = dbEntity.getFuelConsumption, dieselEngine = dbEntity.isDieselEngine, seatAdjustment = dbEntity.isSeatAdjustment, fuelTank = dbEntity.getFuelTank, brakingDistance = dbEntity.getBrakingDistance, notes = dbEntity.getNotes)
 
       def addCarEvt     (dbEntity: AddCarEvtDb)     : AddCarEvt      = AddCarEvt      ( car(dbEntity.getValue) )
       def updateCarEvt  (dbEntity: UpdateCarEvtDb)  : UpdateCarEvt   = UpdateCarEvt   ( car(dbEntity.getValue) )
-      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( dbEntity.getCars.toVector.map(c => car(c)) )
+      def addComplexCarEvt     (dbEntity: AddComplexCarEvtDb)     : AddComplexCarEvt      = AddComplexCarEvt      ( complexCar(dbEntity.getValue) )
+      def updateComplexCarEvt  (dbEntity: UpdateComplexCarEvtDb)  : UpdateComplexCarEvt   = UpdateComplexCarEvt   ( complexCar(dbEntity.getValue) )
+
+      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( dbEntity.getCars.toVector.map(c => car(c)), dbEntity.getComplexCars.toVector.map(c => complexCar(c)) )
 
     }
 
     object FromEntityToDb {
 
       def car       (entity: Car): CarDb = new CarDb(entity.id, entity.horsepower, entity.name)
+      def complexCar(entity: ComplexCar): ComplexCarDb = new ComplexCarDb(entity.id, entity.horsepower, entity.name, entity.fuelConsumption, entity.dieselEngine, entity.seatAdjustment, entity.fuelTank, entity.brakingDistance, entity.notes)
 
       def addCarEvt     (entity: AddCarEvt)     : AddCarEvtDb      = new AddCarEvtDb      ( car(entity.value) )
       def updateCarEvt  (entity: UpdateCarEvt)  : UpdateCarEvtDb   = new UpdateCarEvtDb   ( car(entity.value) )
-      def carGarageState(entity: CarGarageState): CarGarageStateDb = new CarGarageStateDb ( entity.cars.map(c => car(c)).toArray )
+      def addComplexCarEvt     (entity: AddComplexCarEvt)     : AddComplexCarEvtDb      = new AddComplexCarEvtDb      ( complexCar(entity.value) )
+      def updateComplexCarEvt  (entity: UpdateComplexCarEvt)  : UpdateComplexCarEvtDb   = new UpdateComplexCarEvtDb   ( complexCar(entity.value) )
+
+      def carGarageState(entity: CarGarageState): CarGarageStateDb = new CarGarageStateDb ( entity.cars.map(c => car(c)).toArray, entity.complexCars.map(c => complexCar(c)).toArray )
 
     }
 
@@ -96,6 +104,16 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
       val value: UpdateCarEvtDb = Converter.FromEntityToDb.updateCarEvt(o)
       toJavaByteArray(value)
 
+    case o: AddComplexCarEvt         =>
+
+      val value: AddComplexCarEvtDb = Converter.FromEntityToDb.addComplexCarEvt(o)
+      toJavaByteArray(value)
+
+    case o: UpdateComplexCarEvt      =>
+
+      val value: UpdateComplexCarEvtDb = Converter.FromEntityToDb.updateComplexCarEvt(o)
+      toJavaByteArray(value)
+
     case o: CarGarageState    =>
 
       val value: CarGarageStateDb = Converter.FromEntityToDb.carGarageState(o)
@@ -122,6 +140,16 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
 
       val value: UpdateCarEvtDb = fromJavaByteArray[UpdateCarEvtDb](bytes)
       Converter.FromDbToEntity.updateCarEvt(value)
+
+    case AddComplexCarEvtManifest      =>
+
+      val value: AddComplexCarEvtDb = fromJavaByteArray[AddComplexCarEvtDb](bytes)
+      Converter.FromDbToEntity.addComplexCarEvt(value)
+
+    case UpdateComplexCarEvtManifest   =>
+
+      val value: UpdateComplexCarEvtDb = fromJavaByteArray[UpdateComplexCarEvtDb](bytes)
+      Converter.FromDbToEntity.updateComplexCarEvt(value)
 
     case CarGarageStateManifest =>
 

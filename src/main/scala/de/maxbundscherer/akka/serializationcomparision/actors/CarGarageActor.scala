@@ -18,10 +18,15 @@ object CarGarageActor extends Configuration {
   final def props(actorNamePostfix: String): Props  = Props(new CarGarageActor(actorNamePostfix))
 
   // ~ State ~
-  case class CarGarageState(cars: Vector[Car] = Vector.empty) {
+  case class CarGarageState(
+                             cars: Vector[Car] = Vector.empty,
+                             complexCars: Vector[ComplexCar] = Vector.empty
+                           ) {
 
     def addCar(evt: AddCarEvt)      : CarGarageState  = copy(cars = cars :+ evt.value)
     def updateCar(evt: UpdateCarEvt): CarGarageState  = copy(cars = cars.filter(_.id != evt.value.id) :+ evt.value)
+    def addComplexCar(evt: AddComplexCarEvt)      : CarGarageState  = copy(complexCars = complexCars :+ evt.value)
+    def updateComplexCar(evt: UpdateComplexCarEvt): CarGarageState  = copy(complexCars = complexCars.filter(_.id != evt.value.id) :+ evt.value)
 
   }
 
@@ -116,9 +121,27 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
         case Some(_) => persistAndUpdateState( UpdateCarEvt(cmd.value) )
       }
 
+    case cmd: AddComplexCarCmd =>
+
+      state.complexCars.find(_.id == cmd.value.id) match {
+        case Some(_) => tellSender( CarAlreadyExists() )
+        case None    => persistAndUpdateState( AddComplexCarEvt(cmd.value) )
+      }
+
+    case cmd: UpdateComplexCarCmd =>
+
+      state.complexCars.find(_.id == cmd.value.id) match {
+        case None    => tellSender( CarNotFound() )
+        case Some(_) => persistAndUpdateState( UpdateComplexCarEvt(cmd.value) )
+      }
+
     case _: GetAllCarCmd =>
 
       tellSender( GetAllCar(state.cars) )
+
+    case _: GetAllComplexCarCmd =>
+
+      tellSender( GetAllComplexCar(state.complexCars) )
 
     case _: SimulateCrashCmd =>
 
@@ -149,6 +172,18 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
     case evt: UpdateCarEvt =>
 
       state = state updateCar evt
+      snapshot()
+      tellSender( CarGarageSuccess() )
+
+    case evt: AddComplexCarEvt =>
+
+      state = state addComplexCar evt
+      snapshot()
+      tellSender( CarGarageSuccess() )
+
+    case evt: UpdateComplexCarEvt =>
+
+      state = state updateComplexCar evt
       snapshot()
       tellSender( CarGarageSuccess() )
 

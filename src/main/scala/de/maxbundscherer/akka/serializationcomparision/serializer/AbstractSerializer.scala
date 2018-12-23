@@ -27,8 +27,10 @@ abstract class AbstractSerializer(serializerIdentifier: Int) extends SerializerW
   /**
     * Manifests
     */
-  final val AddCarEvtManifest       = classOf[AddCarEvt]      .getName
-  final val UpdateCarEvtManifest    = classOf[UpdateCarEvt]   .getName
-  final val CarGarageStateManifest  = classOf[CarGarageState] .getName
+  final val AddCarEvtManifest           = classOf[AddCarEvt]          .getName
+  final val AddComplexCarEvtManifest    = classOf[AddComplexCarEvt]   .getName
+  final val UpdateCarEvtManifest        = classOf[UpdateCarEvt]       .getName
+  final val UpdateComplexCarEvtManifest = classOf[UpdateComplexCarEvt].getName
+  final val CarGarageStateManifest      = classOf[CarGarageState]     .getName
 
 }
