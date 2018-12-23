@@ -13,6 +13,18 @@ message CarDb {
     string name = 3;
 }
 
+message ComplexCarDb {
+    int32 id = 1;
+    int32 horsepower = 2;
+    string name = 3;
+    float fuelConsumption = 4;
+    bool dieselEngine = 5;
+    bool seatAdjustment = 6;
+    double fuelTank = 7;
+    double brakingDistance = 8;
+    string notes = 9;
+}
+
 message AddCarEvtDb {
     CarDb value = 1 [(scalapb.field).no_box = true]; //Required
 }
@@ -21,6 +33,15 @@ message UpdateCarEvtDb {
     CarDb value = 1 [(scalapb.field).no_box = true]; //Required
 }
 
+message AddComplexCarEvtDb {
+    ComplexCarDb value = 1 [(scalapb.field).no_box = true]; //Required
+}
+
+message UpdateComplexCarEvtDb {
+    ComplexCarDb value = 1 [(scalapb.field).no_box = true]; //Required
+}
+
 message CarGarageStateDb {
     repeated CarDb cars = 1;
+    repeated ComplexCarDb complexCars = 2;
 }
