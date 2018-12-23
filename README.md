@@ -57,7 +57,9 @@ First of all you should read and understand the test params. They are located in
 
 ## Advanced
 
-To run both modes after each other you can run command ``sbt mixedMode``
+To run both modes after each other you can run command ``sbt mixedMode``.
+
+To run both modes after each other and pipe outputs to files you can run command ``./autoRunner.sh`` (check script before you do that).
 
 ### Increase default sbt memory-params
 
