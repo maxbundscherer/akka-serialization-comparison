@@ -22,9 +22,8 @@ object ExperimentMode extends Enumeration {
   * ExperimentRunner
   * @param mode ExperimentMode
   * @param timeout Timeout for asking an actor
-  * @param testSet Vector of Cars (TestSet)
   */
-class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car], complexTestSet: Vector[ComplexCar])(implicit timeout: Timeout) extends SimpleTimeMeasurement {
+class ExperimentRunner(mode: ExperimentMode)(implicit timeout: Timeout) extends SimpleTimeMeasurement with Configuration {
 
   import de.maxbundscherer.akka.serializationcomparision.services.CarGarageService
 
@@ -62,23 +61,43 @@ class ExperimentRunner(mode: ExperimentMode, testSet: Vector[Car], complexTestSe
   carGarageService.getAllComplexCar
 
   // ~ Add Loop ~
-  testSet.foreach(car => {
-    carGarageService.addCar( car )
-  })
-  complexTestSet.foreach(car => {
-    carGarageService.addComplexCar( car )
-  })
+  if(Config.ExperimentMode.testCar) {
+    log.info(s"Test AddCar (${Config.ExperimentMode.numberOfAdds} operations)")
+    for(i <- 0 until Config.ExperimentMode.numberOfAdds) {
+      carGarageService.addCar( TestSet.testSetArray(i % TestSet.testSetArray.length) )
+    }
+  }
+  if(Config.ExperimentMode.testComplexCar) {
+    log.info(s"Test AddComplexCar (${Config.ExperimentMode.numberOfAdds} operations)")
+    for(i <- 0 until Config.ExperimentMode.numberOfAdds) {
+      carGarageService.addComplexCar( TestSet.complexTestSetArray(i % TestSet.complexTestSetArray.length) )
+    }
+  }
 
   // ~ Simulate Crash ~
   carGarageService.simulateCrash()
 
   // ~ Update Loop ~
-  testSet.foreach(car => {
-    carGarageService.updateCar( car.copy(horsepower = car.horsepower * 2) )
-  })
-  complexTestSet.foreach(car => {
-    carGarageService.updateComplexCar( car.copy(horsepower = car.horsepower * 2) )
-  })
+  if(Config.ExperimentMode.testCar) {
+    log.info(s"Test UpdateCar (${Config.ExperimentMode.numberOfUpdates} operations)")
+    for(i <- 0 until Config.ExperimentMode.numberOfUpdates) {
+
+      val car: Car          = TestSet.testSetArray(i % TestSet.testSetArray.length)
+      val templateCar: Car  = TestSet.testSetArray(i % Config.ExperimentMode.numberOfAdds)
+
+      carGarageService.updateCar( car.copy(id = templateCar.id, horsepower = templateCar.horsepower * 2) )
+    }
+  }
+  if(Config.ExperimentMode.testComplexCar) {
+    log.info(s"Test UpdateComplexCar (${Config.ExperimentMode.numberOfUpdates} operations)")
+    for(i <- 0 until Config.ExperimentMode.numberOfUpdates) {
+
+      val car: ComplexCar          = TestSet.complexTestSetArray(i % TestSet.complexTestSetArray.length)
+      val templateCar: ComplexCar  = TestSet.complexTestSetArray(i % Config.ExperimentMode.numberOfAdds)
+
+      carGarageService.updateComplexCar( car.copy(id = templateCar.id, horsepower = templateCar.horsepower * 2) )
+    }
+  }
 
   // ~ Simulate Crash ~
   carGarageService.simulateCrash()

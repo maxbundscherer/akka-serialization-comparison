@@ -24,8 +24,12 @@ trait Configuration {
 
       private val config: Config = paramsConfig.getConfig("experimentMode")
 
-      val timeoutInSeconds        : Int = config.getInt("timeoutInSeconds")
-      val actorSnapshotInterval   : Int = config.getInt("actorSnapshotInterval")
+      val timeoutInSeconds            : Int = config.getInt("timeoutInSeconds")
+      val actorSnapshotInterval       : Int = config.getInt("actorSnapshotInterval")
+      val numberOfAdds                : Int = config.getInt("numberOfAdds")
+      val numberOfUpdates             : Int = config.getInt("numberOfUpdates")
+      val testCar                     : Boolean = config.getBoolean("testCar")
+      val testComplexCar              : Boolean = config.getBoolean("testComplexCar")
     }
 
     object BenchmarkMode {
