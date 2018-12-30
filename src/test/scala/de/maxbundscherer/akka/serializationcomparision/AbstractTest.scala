@@ -24,7 +24,7 @@ abstract class AbstractTest(testName: String) extends Bench.LocalTime with Confi
   /**
     * Configure Test
     */
-  val testSizes: Gen[Int] = Gen.range(s"size-$testName")(Config.BenchmarkMode.testSizesFrom, Config.BenchmarkMode.testSizesUpTo, Config.BenchmarkMode.testSizesHop)
+  val testSizes: Gen[Int] = Gen.range(s"size-$testName")(Config.BenchmarkMode.numberOfSingleTests, Config.BenchmarkMode.numberOfSingleTests, Config.BenchmarkMode.numberOfSingleTests)
 
   val testRanges: Gen[Range] = for {
     size <- testSizes

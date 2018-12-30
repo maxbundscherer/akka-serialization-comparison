@@ -36,9 +36,7 @@ trait Configuration {
 
       private val config: Config = paramsConfig.getConfig("benchmarkMode")
 
-      val testSizesFrom           : Int = config.getInt("testSizesFrom")
-      val testSizesUpTo           : Int = config.getInt("testSizesUpTo")
-      val testSizesHop            : Int = config.getInt("testSizesHop")
+      val numberOfSingleTests     : Int = config.getInt("numberOfSingleTests")
       val testCar                 : Boolean = config.getBoolean("testCar")
       val testComplexCar          : Boolean = config.getBoolean("testComplexCar")
     }
