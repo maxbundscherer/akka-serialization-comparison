@@ -30,6 +30,7 @@ trait Configuration {
       val numberOfUpdates             : Int = config.getInt("numberOfUpdates")
       val testCar                     : Boolean = config.getBoolean("testCar")
       val testComplexCar              : Boolean = config.getBoolean("testComplexCar")
+      val waitForProfilerEnter        : Boolean = config.getBoolean("waitForProfilerEnter")
     }
 
     object BenchmarkMode {
