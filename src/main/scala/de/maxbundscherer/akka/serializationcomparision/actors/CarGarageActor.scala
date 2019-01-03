@@ -19,14 +19,14 @@ object CarGarageActor extends Configuration {
 
   // ~ State ~
   case class CarGarageState(
-                             cars: Vector[Car] = Vector.empty,
-                             complexCars: Vector[ComplexCar] = Vector.empty
+                             cars: Map[Int, Car] = Map.empty,
+                             complexCars: Map[Int, ComplexCar] = Map.empty
                            ) {
 
-    def addCar(evt: AddCarEvt)      : CarGarageState  = copy(cars = cars :+ evt.value)
-    def updateCar(evt: UpdateCarEvt): CarGarageState  = copy(cars = cars.filter(_.id != evt.value.id) :+ evt.value)
-    def addComplexCar(evt: AddComplexCarEvt)      : CarGarageState  = copy(complexCars = complexCars :+ evt.value)
-    def updateComplexCar(evt: UpdateComplexCarEvt): CarGarageState  = copy(complexCars = complexCars.filter(_.id != evt.value.id) :+ evt.value)
+    def addCar(evt: AddCarEvt)      : CarGarageState  = copy( cars = cars + (evt.value.id -> evt.value) )
+    def updateCar(evt: UpdateCarEvt): CarGarageState  = copy( cars = cars + (evt.value.id -> evt.value) )
+    def addComplexCar(evt: AddComplexCarEvt)      : CarGarageState  = copy( complexCars = complexCars + (evt.value.id -> evt.value) )
+    def updateComplexCar(evt: UpdateComplexCarEvt): CarGarageState  = copy( complexCars = complexCars + (evt.value.id -> evt.value) )
 
   }
 
@@ -109,39 +109,39 @@ private class CarGarageActor(actorNamePostfix: String) extends PersistentActor w
 
     case cmd: AddCarCmd =>
 
-      state.cars.find(_.id == cmd.value.id) match {
+      state.cars.get(cmd.value.id) match {
         case Some(_) => tellSender( CarAlreadyExists() )
         case None    => persistAndUpdateState( AddCarEvt(cmd.value) )
       }
 
     case cmd: UpdateCarCmd =>
 
-      state.cars.find(_.id == cmd.value.id) match {
+      state.cars.get(cmd.value.id) match {
         case None    => tellSender( CarNotFound() )
         case Some(_) => persistAndUpdateState( UpdateCarEvt(cmd.value) )
       }
 
     case cmd: AddComplexCarCmd =>
 
-      state.complexCars.find(_.id == cmd.value.id) match {
+      state.complexCars.get(cmd.value.id) match {
         case Some(_) => tellSender( CarAlreadyExists() )
         case None    => persistAndUpdateState( AddComplexCarEvt(cmd.value) )
       }
 
     case cmd: UpdateComplexCarCmd =>
 
-      state.complexCars.find(_.id == cmd.value.id) match {
+      state.complexCars.get(cmd.value.id) match {
         case None    => tellSender( CarNotFound() )
         case Some(_) => persistAndUpdateState( UpdateComplexCarEvt(cmd.value) )
       }
 
     case _: GetAllCarCmd =>
 
-      tellSender( GetAllCar(state.cars) )
+      tellSender( GetAllCar(state.cars.values.toVector) )
 
     case _: GetAllComplexCarCmd =>
 
-      tellSender( GetAllComplexCar(state.complexCars) )
+      tellSender( GetAllComplexCar(state.complexCars.values.toVector) )
 
     case _: SimulateCrashCmd =>
 
