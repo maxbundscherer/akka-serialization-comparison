@@ -42,6 +42,6 @@ message UpdateComplexCarEvtDb {
 }
 
 message CarGarageStateDb {
-    repeated CarDb cars = 1;
-    repeated ComplexCarDb complexCars = 2;
+    map<int32, CarDb> cars = 1;
+    map<int32, ComplexCarDb> complexCars = 2;
 }
