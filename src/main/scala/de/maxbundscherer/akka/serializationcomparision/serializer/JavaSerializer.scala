@@ -8,6 +8,7 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
   import de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.CarGarageState
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
+  import collection.JavaConverters._
   import java.io._
 
   /**
@@ -30,7 +31,13 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
       def addComplexCarEvt     (dbEntity: AddComplexCarEvtDb)     : AddComplexCarEvt      = AddComplexCarEvt      ( complexCar(dbEntity.getValue) )
       def updateComplexCarEvt  (dbEntity: UpdateComplexCarEvtDb)  : UpdateComplexCarEvt   = UpdateComplexCarEvt   ( complexCar(dbEntity.getValue) )
 
-      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( dbEntity.getCars.toVector.map(c => car(c)), dbEntity.getComplexCars.toVector.map(c => complexCar(c)) )
+      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = {
+
+        val t1: Map[Int, Car]        = dbEntity.getCars.asScala.values        .map( c => c.getId -> car(c) )        toMap
+        val t2: Map[Int, ComplexCar] = dbEntity.getComplexCars.asScala.values .map( c => c.getId -> complexCar(c) ) toMap
+
+        CarGarageState (t1, t2)
+      }
 
     }
 
@@ -44,7 +51,13 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
       def addComplexCarEvt     (entity: AddComplexCarEvt)     : AddComplexCarEvtDb      = new AddComplexCarEvtDb      ( complexCar(entity.value) )
       def updateComplexCarEvt  (entity: UpdateComplexCarEvt)  : UpdateComplexCarEvtDb   = new UpdateComplexCarEvtDb   ( complexCar(entity.value) )
 
-      def carGarageState(entity: CarGarageState): CarGarageStateDb = new CarGarageStateDb ( entity.cars.map(c => car(c)).toArray, entity.complexCars.map(c => complexCar(c)).toArray )
+      def carGarageState(entity: CarGarageState): CarGarageStateDb = {
+
+        val t1: Map[Integer, CarDb]         = entity.cars.values        .map( c => new Integer(c.id) -> car(c)        ) toMap
+        val t2: Map[Integer, ComplexCarDb]  = entity.complexCars.values .map( c => new Integer(c.id) -> complexCar(c) ) toMap
+
+        new CarGarageStateDb(t1.asJava, t2.asJava)
+      }
 
     }
 

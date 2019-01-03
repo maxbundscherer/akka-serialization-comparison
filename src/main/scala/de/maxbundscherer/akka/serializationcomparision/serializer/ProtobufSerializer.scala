@@ -28,7 +28,13 @@ class ProtobufSerializer extends AbstractSerializer(serializerIdentifier = 9003)
       def addComplexCarEvt     (dbEntity: AddComplexCarEvtDb)     : AddComplexCarEvt      = AddComplexCarEvt      ( value = complexCar(dbEntity.value) )
       def updateComplexCarEvt  (dbEntity: UpdateComplexCarEvtDb)  : UpdateComplexCarEvt   = UpdateComplexCarEvt   ( value = complexCar(dbEntity.value) )
 
-      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = CarGarageState ( cars = dbEntity.cars.map(c => car(c)).toVector, complexCars = dbEntity.complexCars.map(c => complexCar(c)).toVector )
+      def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = {
+
+        val t1: Map[Int, Car]         = dbEntity.cars.values        .map( c => c.id -> car(c) )        toMap
+        val t2: Map[Int, ComplexCar]  = dbEntity.complexCars.values .map( c => c.id -> complexCar(c) ) toMap
+
+        CarGarageState(t1, t2)
+      }
 
     }
 
@@ -42,7 +48,13 @@ class ProtobufSerializer extends AbstractSerializer(serializerIdentifier = 9003)
       def addComplexCarEvt     (entity: AddComplexCarEvt)     : AddComplexCarEvtDb      = AddComplexCarEvtDb      ( value = complexCar(entity.value) )
       def updateComplexCarEvt  (entity: UpdateComplexCarEvt)  : UpdateComplexCarEvtDb   = UpdateComplexCarEvtDb   ( value = complexCar(entity.value) )
 
-      def carGarageState(entity: CarGarageState): CarGarageStateDb = CarGarageStateDb ( cars = entity.cars.map(c => car(c)), complexCars = entity.complexCars.map(c => complexCar(c)))
+      def carGarageState(entity: CarGarageState): CarGarageStateDb = {
+
+        val t1: Map[Int, CarDb]         = entity.cars.values        .map(c => c.id -> car(c) )        toMap
+        val t2: Map[Int, ComplexCarDb]  = entity.complexCars.values .map(c => c.id -> complexCar(c) ) toMap
+
+        CarGarageStateDb(t1, t2)
+      }
 
     }
 
