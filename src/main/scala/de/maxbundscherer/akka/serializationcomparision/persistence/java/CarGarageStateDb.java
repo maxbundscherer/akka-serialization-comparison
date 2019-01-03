@@ -1,23 +1,22 @@
 package de.maxbundscherer.akka.serializationcomparision.persistence.java;
 
 import java.io.Serializable;
-import java.util.Map;
 
 public class CarGarageStateDb implements Serializable {
 
-    Map<Integer, CarDb> cars;
-    Map<Integer, ComplexCarDb> complexCars;
+    CarDb[] cars;
+    ComplexCarDb[] complexCars;
 
-    public CarGarageStateDb(Map<Integer, CarDb> cars, Map<Integer, ComplexCarDb> complexCars) {
+    public CarGarageStateDb(CarDb[] cars, ComplexCarDb[] complexCars) {
         this.cars = cars;
         this.complexCars = complexCars;
     }
 
-    public Map<Integer, CarDb> getCars() {
+    public CarDb[] getCars() {
         return cars;
     }
 
-    public Map<Integer, ComplexCarDb> getComplexCars() {
+    public ComplexCarDb[] getComplexCars() {
         return complexCars;
     }
 

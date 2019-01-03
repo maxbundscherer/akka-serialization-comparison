@@ -8,7 +8,6 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
   import de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.CarGarageState
   import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate._
 
-  import collection.JavaConverters._
   import java.io._
 
   /**
@@ -33,8 +32,8 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
 
       def carGarageState(dbEntity: CarGarageStateDb): CarGarageState = {
 
-        val t1: Map[Int, Car]        = dbEntity.getCars.asScala.values        .map( c => c.getId -> car(c) )        toMap
-        val t2: Map[Int, ComplexCar] = dbEntity.getComplexCars.asScala.values .map( c => c.getId -> complexCar(c) ) toMap
+        val t1: Map[Int, Car]        = dbEntity.getCars.toVector        .map( c => c.getId -> car(c) )        toMap
+        val t2: Map[Int, ComplexCar] = dbEntity.getComplexCars.toVector .map( c => c.getId -> complexCar(c) ) toMap
 
         CarGarageState (t1, t2)
       }
@@ -53,10 +52,10 @@ class JavaSerializer extends AbstractSerializer(serializerIdentifier = 9001) {
 
       def carGarageState(entity: CarGarageState): CarGarageStateDb = {
 
-        val t1: Map[Integer, CarDb]         = entity.cars.values        .map( c => new Integer(c.id) -> car(c)        ) toMap
-        val t2: Map[Integer, ComplexCarDb]  = entity.complexCars.values .map( c => new Integer(c.id) -> complexCar(c) ) toMap
+        val t1: Array[CarDb]         = entity.cars.values       .map(c => car(c)).toArray
+        val t2: Array[ComplexCarDb]  = entity.complexCars.values.map(c => complexCar(c)).toArray
 
-        new CarGarageStateDb(t1.asJava, t2.asJava)
+        new CarGarageStateDb(t1, t2)
       }
 
     }
