@@ -1,4 +1,4 @@
-export SBT_OPTS="-Xms4G -Xmx14G";
+export SBT_OPTS="-Xms4G -Xmx13G";
 mkdir results;
 
 cat autoRunner.sh >> results/params.txt;
