@@ -19,5 +19,3 @@ sbt clean test >> results/test.log;
 echo "" >> results/params.txt;
 echo "End Test >> results/params.txt;
 date >> results/params.txt;
-sleep 5;
-sudo shutdown now;
