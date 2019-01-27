@@ -1,0 +1,94 @@
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project global-plugins from idea.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading global plugins from /Users/maximilianbundscherer/.sbt/1.0/plugins[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating ProjectRef(uri("file:/Users/maximilianbundscherer/.sbt/1.0/plugins/"), "global-plugins")...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project akka-serialization-comparision-build from protoc.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading project definition from /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/project[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating ProjectRef(uri("file:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/project/"), "akka-serialization-comparision-build")...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project akka-serialization-comparision from build.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mSet current project to akka-serialization-comparision (in build file:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/)[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 0 s, completed 25.01.2019 19:03:38[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating ...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
+[0m[[0m[33mwarn[0m] [0m[0mThere may be incompatibilities among your library dependencies.[0m
+[0m[[0m[33mwarn[0m] [0m[0mRun 'evicted' to see detailed eviction warnings[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 protobuf files to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling schema /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf/protobuf.proto[0m
+protoc-jar: protoc version: 3.6.0, detected platform: osx-x86_64 (mac os x/x86_64)
+protoc-jar: embedded: bin/3.6.0/protoc-3.6.0-osx-x86_64.exe
+protoc-jar: executing: [/var/folders/75/_6mblp3n0cdd1m8fq1rt8bjr0000gp/T/protocjar1680657007635052652/bin/protoc.exe, --plugin=protoc-gen-scala=/var/folders/75/_6mblp3n0cdd1m8fq1rt8bjr0000gp/T/protocbridge2519000316977016356, --scala_out=grpc:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/protobuf_external, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/protobuf_external, /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf/protobuf.proto]
+[0m[[0m[0minfo[0m] [0m[0mCompiling protobuf[0m
+[0m[[0m[0minfo[0m] [0m[0mProtoc target directory: /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 33 Scala sources and 7 Java sources to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 11 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/akka-serialization-comparision_2.12-0.1.jar ...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
+[0m[[0m[0minfo[0m] [0m[0mRunning de.maxbundscherer.akka.serializationcomparision.Main [0m
+[DEBUG] [01/25/2019 19:03:57.092] [run-main-0] [EventStream(akka://actorSystem-java)] logger log1-Logging$DefaultLogger started
+[DEBUG] [01/25/2019 19:03:57.093] [run-main-0] [EventStream(akka://actorSystem-java)] Default Loggers started
+[INFO] [01/25/2019 19:03:57.145] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] --- Start Experiment (modeValue='java') ---
+[DEBUG] [01/25/2019 19:03:57.156] [actorSystem-java-akka.actor.default-dispatcher-6] [akka.persistence.Persistence(akka://actorSystem-java)] Create plugin: akka.persistence.journal.leveldb akka.persistence.journal.leveldb.LeveldbJournal
+[DEBUG] [01/25/2019 19:03:57.189] [actorSystem-java-akka.actor.default-dispatcher-6] [akka://actorSystem-java/user/$a] Actor online
+[DEBUG] [01/25/2019 19:03:57.194] [actorSystem-java-akka.actor.default-dispatcher-6] [akka.persistence.Persistence(akka://actorSystem-java)] Create plugin: akka.persistence.snapshot-store.local akka.persistence.snapshot.local.LocalSnapshotStore
+[DEBUG] [01/25/2019 19:03:57.296] [actorSystem-java-akka.actor.default-dispatcher-2] [akka://actorSystem-java/user/$a] RecoveryCompleted
+[INFO] [01/25/2019 19:03:57.303] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test AddCar (200000 operations)
+[DEBUG] [01/25/2019 19:04:05.651] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentImpl]
+[DEBUG] [01/25/2019 19:04:05.665] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddCarEvt]
+[DEBUG] [01/25/2019 19:04:19.593] [actorSystem-java-akka.actor.default-dispatcher-3] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [01/25/2019 19:04:20.020] [actorSystem-java-akka.actor.default-dispatcher-5] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[INFO] [01/25/2019 19:04:21.014] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test AddComplexCar (200000 operations)
+[DEBUG] [01/25/2019 19:04:21.016] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddComplexCarEvt]
+[DEBUG] [01/25/2019 19:04:35.480] [actorSystem-java-akka.actor.default-dispatcher-6] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [01/25/2019 19:04:36.126] [actorSystem-java-akka.actor.default-dispatcher-5] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[INFO] [01/25/2019 19:04:36.536] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test UpdateCar (10000000 operations)
+[ERROR] [01/25/2019 19:04:36.540] [actorSystem-java-akka.actor.default-dispatcher-15] [akka://actorSystem-java/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [01/25/2019 19:04:36.543] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Actor online
+[DEBUG] [01/25/2019 19:04:37.189] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Restore from snapshot
+[DEBUG] [01/25/2019 19:04:37.191] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] RecoveryCompleted
+[DEBUG] [01/25/2019 19:04:37.192] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateCarEvt]
+[DEBUG] [01/25/2019 19:04:49.052] [actorSystem-java-akka.actor.default-dispatcher-15] [akka://actorSystem-java/user/$a] Do snapshot now
+[0m[[0m[31merror[0m] [0m[0m(run-main-0) java.lang.ArrayIndexOutOfBoundsException: 100000[0m
+[0m[[0m[31merror[0m] [0m[0mjava.lang.ArrayIndexOutOfBoundsException: 100000[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.utils.ExperimentRunner.$anonfun$new$3(ExperimentRunner.scala:86)[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.utils.ExperimentRunner.$anonfun$new$3$adapted(ExperimentRunner.scala:83)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.Range.foreach(Range.scala:155)[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.utils.ExperimentRunner.<init>(ExperimentRunner.scala:83)[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.Main$.delayedEndpoint$de$maxbundscherer$akka$serializationcomparision$Main$1(Main.scala:19)[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.Main$delayedInit$body.apply(Main.scala:8)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function0.apply$mcV$sp(Function0.scala:34)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.Function0.apply$mcV$sp$(Function0.scala:34)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.runtime.AbstractFunction0.apply$mcV$sp(AbstractFunction0.scala:12)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.App.$anonfun$main$1$adapted(App.scala:76)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.collection.immutable.List.foreach(List.scala:388)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.App.main(App.scala:76)[0m
+[0m[[0m[31merror[0m] [0m[0m	at scala.App.main$(App.scala:74)[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.Main$.main(Main.scala:8)[0m
+[0m[[0m[31merror[0m] [0m[0m	at de.maxbundscherer.akka.serializationcomparision.Main.main(Main.scala)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)[0m
+[0m[[0m[31merror[0m] [0m[0m	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)[0m
+[0m[[0m[31merror[0m] [0m[0m	at java.lang.reflect.Method.invoke(Method.java:498)[0m
+[DEBUG] [01/25/2019 19:04:49.891] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
