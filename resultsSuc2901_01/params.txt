@@ -1,0 +1,52 @@
+export SBT_OPTS="-Xms4G -Xmx13G";
+mkdir results;
+
+cat autoRunner.sh >> results/params.txt;
+cat src/main/resources/params.conf >> results/params.txt;
+
+echo "" >> results/params.txt;
+echo "Start Run" >> results/params.txt;
+date >> results/params.txt;
+sbt clean run >> results/run.log;
+echo "" >> results/params.txt;
+echo "End Run" >> results/params.txt;
+date >> results/params.txt;
+
+echo "" >> results/params.txt;
+echo "Start Test" >> results/params.txt;
+date >> results/params.txt;
+sbt clean test >> results/test.log;
+echo "" >> results/params.txt;
+echo "End Test >> results/params.txt;
+date >> results/params.txt;
+testSet {
+  numberOfTestCars                = 100000
+  carNameStringMaxLength          = 200
+  complexCarNotesStringMaxLength  = 900
+}
+
+experimentMode {
+  timeoutInSeconds            = 60000
+  actorSnapshotInterval       = 100000
+  numberOfAdds                = 100000
+  numberOfUpdates             = 5000000
+  testCar                     = true
+  testComplexCar              = true
+  waitForProfilerEnter        = false
+}
+
+benchmarkMode {
+  numberOfSingleTests     = 10000
+  testCar                 = true
+  testComplexCar          = true
+}
+
+Start Run
+Mo 28 Jan 2019 17:31:48 CET
+
+End Run
+Mo 28 Jan 2019 19:32:42 CET
+
+Start Test
+Mo 28 Jan 2019 19:32:42 CET
+
