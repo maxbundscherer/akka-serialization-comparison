@@ -1,0 +1,841 @@
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project global-plugins from idea.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading global plugins from /Users/maximilianbundscherer/.sbt/1.0/plugins[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project akka-serialization-comparision-build from protoc.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading project definition from /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/project[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project akka-serialization-comparision from build.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mSet current project to akka-serialization-comparision (in build file:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/)[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 0 s, completed 02.02.2019 00:37:20[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating ...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
+[0m[[0m[33mwarn[0m] [0m[0mThere may be incompatibilities among your library dependencies.[0m
+[0m[[0m[33mwarn[0m] [0m[0mRun 'evicted' to see detailed eviction warnings[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 protobuf files to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling schema /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf/protobuf.proto[0m
+protoc-jar: protoc version: 3.6.0, detected platform: osx-x86_64 (mac os x/x86_64)
+protoc-jar: embedded: bin/3.6.0/protoc-3.6.0-osx-x86_64.exe
+protoc-jar: executing: [/var/folders/75/_6mblp3n0cdd1m8fq1rt8bjr0000gp/T/protocjar3119972298874303502/bin/protoc.exe, --plugin=protoc-gen-scala=/var/folders/75/_6mblp3n0cdd1m8fq1rt8bjr0000gp/T/protocbridge6005877523292334070, --scala_out=grpc:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/protobuf_external, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/protobuf_external, /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf/protobuf.proto]
+[0m[[0m[0minfo[0m] [0m[0mCompiling protobuf[0m
+[0m[[0m[0minfo[0m] [0m[0mProtoc target directory: /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 33 Scala sources and 7 Java sources to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 11 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0minfo[0m] [0m[0mPackaging /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/akka-serialization-comparision_2.12-0.1.jar ...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone packaging.[0m
+[0m[[0m[0minfo[0m] [0m[0mRunning de.maxbundscherer.akka.serializationcomparision.Main [0m
+[DEBUG] [02/02/2019 00:37:37.936] [run-main-0] [EventStream(akka://actorSystem-java)] logger log1-Logging$DefaultLogger started
+[DEBUG] [02/02/2019 00:37:37.938] [run-main-0] [EventStream(akka://actorSystem-java)] Default Loggers started
+[INFO] [02/02/2019 00:37:37.990] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] --- Start Experiment (modeValue='java') ---
+[DEBUG] [02/02/2019 00:37:38.001] [actorSystem-java-akka.actor.default-dispatcher-2] [akka.persistence.Persistence(akka://actorSystem-java)] Create plugin: akka.persistence.journal.leveldb akka.persistence.journal.leveldb.LeveldbJournal
+[DEBUG] [02/02/2019 00:37:38.032] [actorSystem-java-akka.actor.default-dispatcher-2] [akka://actorSystem-java/user/$a] Actor online
+[DEBUG] [02/02/2019 00:37:38.036] [actorSystem-java-akka.actor.default-dispatcher-2] [akka.persistence.Persistence(akka://actorSystem-java)] Create plugin: akka.persistence.snapshot-store.local akka.persistence.snapshot.local.LocalSnapshotStore
+[DEBUG] [02/02/2019 00:37:38.127] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] RecoveryCompleted
+[INFO] [02/02/2019 00:37:38.136] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test AddCar (100000 operations)
+[DEBUG] [02/02/2019 00:37:46.502] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-5] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentImpl]
+[DEBUG] [02/02/2019 00:37:46.515] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-5] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddCarEvt]
+[DEBUG] [02/02/2019 00:37:58.994] [actorSystem-java-akka.actor.default-dispatcher-3] [akka://actorSystem-java/user/$a] Do snapshot now
+[INFO] [02/02/2019 00:37:58.995] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test AddComplexCar (100000 operations)
+[DEBUG] [02/02/2019 00:37:58.996] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-5] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddComplexCarEvt]
+[DEBUG] [02/02/2019 00:37:59.326] [actorSystem-java-akka.actor.default-dispatcher-3] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:38:12.579] [actorSystem-java-akka.actor.default-dispatcher-2] [akka://actorSystem-java/user/$a] Do snapshot now
+[INFO] [02/02/2019 00:38:12.579] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test UpdateCar (5000000 operations)
+[ERROR] [02/02/2019 00:38:12.584] [actorSystem-java-akka.actor.default-dispatcher-2] [akka://actorSystem-java/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [02/02/2019 00:38:12.587] [actorSystem-java-akka.actor.default-dispatcher-2] [akka://actorSystem-java/user/$a] Actor online
+[DEBUG] [02/02/2019 00:38:12.847] [actorSystem-java-akka.actor.default-dispatcher-2] [akka://actorSystem-java/user/$a] Restore from snapshot
+[DEBUG] [02/02/2019 00:38:12.853] [actorSystem-java-akka.persistence.dispatchers.default-replay-dispatcher-13] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentRepr]
+[DEBUG] [02/02/2019 00:38:16.332] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] RecoveryCompleted
+[DEBUG] [02/02/2019 00:38:16.333] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-5] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateCarEvt]
+[DEBUG] [02/02/2019 00:38:16.335] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:38:28.370] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:38:29.052] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:38:40.101] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:38:40.778] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:38:51.870] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:38:52.518] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:39:03.607] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:39:04.257] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:39:15.291] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:39:16.084] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:39:27.121] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:39:27.784] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:39:38.811] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:39:39.462] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:39:50.555] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:39:51.187] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:40:02.311] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:40:02.968] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:40:13.997] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:40:14.660] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:40:25.761] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:40:26.418] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:40:37.449] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:40:38.100] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:40:49.125] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:40:49.835] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:41:00.972] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:41:01.628] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:41:12.693] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:41:13.363] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:41:24.476] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:41:25.123] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:41:36.133] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:41:36.803] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:41:47.867] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:41:48.599] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:41:59.702] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:42:00.359] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:42:11.459] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:42:12.117] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:42:23.276] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:42:23.925] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:42:34.954] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:42:35.620] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:42:46.663] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:42:47.413] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:42:58.546] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:42:59.753] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:43:11.373] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:43:13.093] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:43:24.568] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:43:26.503] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:43:38.389] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:43:40.378] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:43:52.629] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:43:54.516] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:44:06.430] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:44:08.554] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:44:20.596] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:44:22.653] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:44:34.821] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:44:37.742] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:44:49.788] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:44:52.119] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:45:04.267] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:45:06.753] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:45:19.183] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:45:22.384] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:45:35.021] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:45:37.934] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:45:51.167] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:45:54.817] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:46:07.528] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:46:11.653] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:46:25.148] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:46:28.789] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:46:41.743] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:46:45.272] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:46:58.434] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:47:01.874] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:47:15.009] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:47:18.361] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:47:31.816] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:47:35.632] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:47:48.621] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:47:51.949] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:48:04.804] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:48:08.331] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:48:21.614] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:48:24.909] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:48:38.268] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:48:41.849] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:48:54.991] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:48:58.500] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:49:11.895] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:49:15.391] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:49:28.554] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:49:32.229] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:49:45.630] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[INFO] [02/02/2019 00:49:45.630] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] Test UpdateComplexCar (5000000 operations)
+[DEBUG] [02/02/2019 00:49:45.631] [actorSystem-java-akka.persistence.dispatchers.default-plugin-dispatcher-5] [akka.serialization.Serialization(akka://actorSystem-java)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JavaSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateComplexCarEvt]
+[DEBUG] [02/02/2019 00:49:49.154] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:50:10.322] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:50:14.091] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:50:35.746] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:50:39.494] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:51:00.211] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:51:03.768] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:51:24.959] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:51:28.826] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:51:49.742] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:51:53.486] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:52:15.412] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:52:19.189] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:52:41.425] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:52:45.394] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:53:07.280] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:53:10.941] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:53:36.589] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:53:40.789] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:54:02.441] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:54:06.132] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:54:27.532] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:54:31.078] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:54:53.005] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:54:56.695] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:55:22.656] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:55:28.040] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:55:55.189] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:55:59.258] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:56:21.017] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:56:24.952] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:56:47.680] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:56:51.835] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:57:13.951] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:57:18.085] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:57:43.628] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:57:47.281] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:58:12.917] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:58:18.577] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:58:40.687] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:58:44.662] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:59:09.931] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:59:15.148] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 00:59:38.977] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 00:59:42.989] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:00:12.421] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:00:17.911] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:00:44.580] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:00:48.418] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:01:09.226] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:01:13.003] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:01:33.764] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:01:37.619] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:02:02.022] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:02:06.109] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:02:30.491] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:02:36.359] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:03:00.569] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:03:05.771] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:03:27.700] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:03:31.749] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:03:55.271] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:04:01.031] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:04:29.526] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:04:34.239] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:05:01.502] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:05:07.043] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:05:32.245] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:05:36.325] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:06:02.426] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:06:07.231] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:06:31.307] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:06:35.818] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:07:01.912] [actorSystem-java-akka.actor.default-dispatcher-14] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:07:08.285] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:07:36.864] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:07:43.030] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:08:10.320] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:08:15.966] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:08:39.251] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:08:44.956] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:09:12.857] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:09:19.209] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:09:47.352] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:09:52.817] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:10:21.890] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:10:27.644] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:10:53.226] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:10:58.970] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:11:25.371] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:11:31.603] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:11:56.185] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:12:02.491] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:12:30.201] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:12:34.204] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:12:58.954] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:13:03.221] [actorSystem-java-akka.actor.default-dispatcher-4] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:13:28.592] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:13:32.912] [actorSystem-java-akka.actor.default-dispatcher-16] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:13:58.216] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Do snapshot now
+[ERROR] [02/02/2019 01:13:58.217] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [02/02/2019 01:13:58.217] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Actor online
+[DEBUG] [02/02/2019 01:13:58.778] [actorSystem-java-akka.actor.default-dispatcher-17] [akka://actorSystem-java/user/$a] Restore from snapshot
+[DEBUG] [02/02/2019 01:14:07.020] [actorSystem-java-akka.actor.default-dispatcher-20] [akka://actorSystem-java/user/$a] RecoveryCompleted
+[DEBUG] [02/02/2019 01:14:07.029] [actorSystem-java-akka.actor.default-dispatcher-20] [akka://actorSystem-java/user/$a] SaveSnapshotSuccess
+[INFO] [02/02/2019 01:14:07.046] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] StopTimeMeasurement: 2189 seconds
+[INFO] [02/02/2019 01:14:07.046] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-java)] --- End Experiment (modeValue='java') ---
+[DEBUG] [02/02/2019 01:14:08.080] [actorSystem-java-akka.actor.default-dispatcher-20] [EventStream] shutting down: StandardOutLogger
+[DEBUG] [02/02/2019 01:14:08.081] [run-main-0] [EventStream(akka://actorSystem-json)] logger log1-Logging$DefaultLogger started
+[DEBUG] [02/02/2019 01:14:08.081] [run-main-0] [EventStream(akka://actorSystem-json)] Default Loggers started
+[INFO] [02/02/2019 01:14:08.102] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] --- Start Experiment (modeValue='json') ---
+[DEBUG] [02/02/2019 01:14:08.102] [actorSystem-json-akka.actor.default-dispatcher-6] [akka.persistence.Persistence(akka://actorSystem-json)] Create plugin: akka.persistence.journal.leveldb akka.persistence.journal.leveldb.LeveldbJournal
+[DEBUG] [02/02/2019 01:14:08.103] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Actor online
+[DEBUG] [02/02/2019 01:14:08.103] [actorSystem-json-akka.actor.default-dispatcher-6] [akka.persistence.Persistence(akka://actorSystem-json)] Create plugin: akka.persistence.snapshot-store.local akka.persistence.snapshot.local.LocalSnapshotStore
+[DEBUG] [02/02/2019 01:14:08.119] [actorSystem-json-akka.actor.default-dispatcher-3] [akka://actorSystem-json/user/$a] RecoveryCompleted
+[INFO] [02/02/2019 01:14:08.121] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] Test AddCar (100000 operations)
+[DEBUG] [02/02/2019 01:14:08.121] [actorSystem-json-akka.persistence.dispatchers.default-plugin-dispatcher-7] [akka.serialization.Serialization(akka://actorSystem-json)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentImpl]
+[DEBUG] [02/02/2019 01:14:08.121] [actorSystem-json-akka.persistence.dispatchers.default-plugin-dispatcher-7] [akka.serialization.Serialization(akka://actorSystem-json)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JsonSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddCarEvt]
+[DEBUG] [02/02/2019 01:14:20.728] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[INFO] [02/02/2019 01:14:20.728] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] Test AddComplexCar (100000 operations)
+[DEBUG] [02/02/2019 01:14:20.728] [actorSystem-json-akka.persistence.dispatchers.default-plugin-dispatcher-7] [akka.serialization.Serialization(akka://actorSystem-json)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JsonSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddComplexCarEvt]
+[DEBUG] [02/02/2019 01:14:22.426] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:14:49.421] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[INFO] [02/02/2019 01:14:49.421] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] Test UpdateCar (5000000 operations)
+[ERROR] [02/02/2019 01:14:49.421] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [02/02/2019 01:14:49.422] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Actor online
+[DEBUG] [02/02/2019 01:14:50.005] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Restore from snapshot
+[DEBUG] [02/02/2019 01:14:50.006] [actorSystem-json-akka.persistence.dispatchers.default-replay-dispatcher-14] [akka.serialization.Serialization(akka://actorSystem-json)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentRepr]
+[DEBUG] [02/02/2019 01:14:57.123] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] RecoveryCompleted
+[DEBUG] [02/02/2019 01:14:57.123] [actorSystem-json-akka.persistence.dispatchers.default-plugin-dispatcher-7] [akka.serialization.Serialization(akka://actorSystem-json)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JsonSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateCarEvt]
+[DEBUG] [02/02/2019 01:14:57.130] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:15:10.157] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:15:17.753] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:15:29.167] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:15:35.515] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:15:46.461] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:15:52.477] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:16:04.615] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:16:15.009] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:16:28.089] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:16:37.207] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:16:49.164] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:16:58.149] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:17:09.792] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:17:19.748] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:17:32.035] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:17:39.076] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:17:51.073] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:18:01.108] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:18:12.824] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:18:21.906] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:18:33.698] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:18:41.969] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:18:54.924] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:19:04.123] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:19:16.026] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:19:24.584] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:19:36.779] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:19:45.883] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:19:57.951] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:20:07.856] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:20:19.820] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:20:29.443] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:20:42.201] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:20:52.540] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:21:05.711] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:21:14.352] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:21:26.999] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:21:36.719] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:21:47.931] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:21:55.957] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:22:07.995] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:22:15.782] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:22:27.927] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:22:37.951] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:22:49.962] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:22:58.880] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:23:11.756] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:23:20.727] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:23:33.266] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:23:42.457] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:23:54.620] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:24:02.251] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:24:14.086] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:24:20.179] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:24:31.579] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:24:41.745] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:24:53.635] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:25:03.821] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:25:15.997] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:25:25.769] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:25:38.684] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:25:48.119] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:26:04.644] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:26:13.714] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:26:27.510] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:26:36.401] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:26:48.693] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:26:57.785] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:27:09.927] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:27:19.088] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:27:30.743] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:27:40.599] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:27:53.094] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:28:02.806] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:28:15.433] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:28:25.177] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:28:37.850] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:28:45.269] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:28:56.053] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:29:03.941] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:29:16.203] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:29:23.349] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:29:34.719] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:29:43.395] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:29:54.530] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:30:03.428] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:30:15.603] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:30:24.516] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:30:37.111] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:30:45.514] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:30:56.568] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:31:02.866] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:31:14.655] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:31:24.148] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:31:36.614] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:31:46.793] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:31:58.235] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:32:04.551] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:32:15.893] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[INFO] [02/02/2019 01:32:15.893] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] Test UpdateComplexCar (5000000 operations)
+[DEBUG] [02/02/2019 01:32:15.893] [actorSystem-json-akka.persistence.dispatchers.default-plugin-dispatcher-7] [akka.serialization.Serialization(akka://actorSystem-json)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.JsonSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateComplexCarEvt]
+[DEBUG] [02/02/2019 01:32:22.787] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:32:44.970] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:32:54.011] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:33:19.305] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:33:29.618] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:33:54.138] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:34:04.151] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:34:28.026] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:34:37.890] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:35:02.409] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:35:10.363] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:35:34.208] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:35:45.277] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:36:09.523] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:36:19.920] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:36:45.616] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:36:55.524] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:37:19.907] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:37:29.015] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:37:51.714] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:38:00.088] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:38:20.755] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:38:30.483] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:38:55.516] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:39:05.806] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:39:29.356] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:39:38.363] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:40:02.342] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:40:10.765] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:40:34.670] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:40:44.187] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:41:09.502] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:41:17.730] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:41:40.934] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:41:50.197] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:42:15.273] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:42:23.618] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:42:48.320] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:42:57.826] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:43:22.381] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:43:31.605] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:43:52.286] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:43:59.138] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:44:23.932] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:44:34.025] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:45:00.232] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:45:09.683] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:45:33.917] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:45:42.425] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:46:06.095] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:46:15.549] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:46:39.623] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:46:46.133] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:47:08.418] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:47:17.071] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:47:40.764] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:47:49.455] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:48:14.014] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:48:22.617] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:48:45.943] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:48:55.957] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:49:20.343] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:49:29.867] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:49:54.359] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:50:04.611] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:50:28.788] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:50:38.689] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:51:01.505] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:51:11.423] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:51:35.342] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:51:45.366] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:52:09.383] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:52:19.248] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:52:42.958] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:52:52.753] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:53:16.790] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:53:25.400] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:53:46.788] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:53:57.097] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:54:21.153] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:54:30.981] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:54:52.408] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:55:01.668] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:55:26.252] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:55:36.395] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:56:04.676] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:56:16.380] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:56:41.100] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:56:49.878] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:57:12.442] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:57:21.718] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:57:44.351] [actorSystem-json-akka.actor.default-dispatcher-5] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:57:53.327] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:58:17.710] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:58:27.789] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:58:52.163] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:59:01.371] [actorSystem-json-akka.actor.default-dispatcher-18] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 01:59:25.549] [actorSystem-json-akka.actor.default-dispatcher-2] [akka://actorSystem-json/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 01:59:35.046] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:00:00.304] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Do snapshot now
+[ERROR] [02/02/2019 02:00:00.305] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [02/02/2019 02:00:00.305] [actorSystem-json-akka.actor.default-dispatcher-6] [akka://actorSystem-json/user/$a] Actor online
+[DEBUG] [02/02/2019 02:00:02.225] [actorSystem-json-akka.actor.default-dispatcher-19] [akka://actorSystem-json/user/$a] Restore from snapshot
+[DEBUG] [02/02/2019 02:00:11.947] [actorSystem-json-akka.actor.default-dispatcher-21] [akka://actorSystem-json/user/$a] RecoveryCompleted
+[DEBUG] [02/02/2019 02:00:11.952] [actorSystem-json-akka.actor.default-dispatcher-21] [akka://actorSystem-json/user/$a] SaveSnapshotSuccess
+[INFO] [02/02/2019 02:00:11.969] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] StopTimeMeasurement: 2764 seconds
+[INFO] [02/02/2019 02:00:11.969] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-json)] --- End Experiment (modeValue='json') ---
+[DEBUG] [02/02/2019 02:00:12.982] [run-main-0] [EventStream(akka://actorSystem-protobuf)] logger log1-Logging$DefaultLogger started
+[DEBUG] [02/02/2019 02:00:12.982] [run-main-0] [EventStream(akka://actorSystem-protobuf)] Default Loggers started
+[INFO] [02/02/2019 02:00:12.994] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] --- Start Experiment (modeValue='protobuf') ---
+[DEBUG] [02/02/2019 02:00:12.995] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka.persistence.Persistence(akka://actorSystem-protobuf)] Create plugin: akka.persistence.journal.leveldb akka.persistence.journal.leveldb.LeveldbJournal
+[DEBUG] [02/02/2019 02:00:12.995] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Actor online
+[DEBUG] [02/02/2019 02:00:12.996] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka.persistence.Persistence(akka://actorSystem-protobuf)] Create plugin: akka.persistence.snapshot-store.local akka.persistence.snapshot.local.LocalSnapshotStore
+[DEBUG] [02/02/2019 02:00:13.008] [actorSystem-protobuf-akka.actor.default-dispatcher-5] [akka://actorSystem-protobuf/user/$a] RecoveryCompleted
+[INFO] [02/02/2019 02:00:13.009] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] Test AddCar (100000 operations)
+[DEBUG] [02/02/2019 02:00:13.010] [actorSystem-protobuf-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-protobuf)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentImpl]
+[DEBUG] [02/02/2019 02:00:13.010] [actorSystem-protobuf-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-protobuf)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.ProtobufSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddCarEvt]
+[DEBUG] [02/02/2019 02:00:24.494] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[INFO] [02/02/2019 02:00:24.494] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] Test AddComplexCar (100000 operations)
+[DEBUG] [02/02/2019 02:00:24.494] [actorSystem-protobuf-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-protobuf)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.ProtobufSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$AddComplexCarEvt]
+[DEBUG] [02/02/2019 02:00:25.612] [actorSystem-protobuf-akka.actor.default-dispatcher-4] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:00:48.376] [actorSystem-protobuf-akka.actor.default-dispatcher-5] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[INFO] [02/02/2019 02:00:48.376] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] Test UpdateCar (5000000 operations)
+[ERROR] [02/02/2019 02:00:48.376] [actorSystem-protobuf-akka.actor.default-dispatcher-5] [akka://actorSystem-protobuf/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [02/02/2019 02:00:48.377] [actorSystem-protobuf-akka.actor.default-dispatcher-4] [akka://actorSystem-protobuf/user/$a] Actor online
+[DEBUG] [02/02/2019 02:00:48.530] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Restore from snapshot
+[DEBUG] [02/02/2019 02:00:48.533] [actorSystem-protobuf-akka.persistence.dispatchers.default-replay-dispatcher-15] [akka.serialization.Serialization(akka://actorSystem-protobuf)] Using serializer [akka.persistence.serialization.MessageSerializer] for message [akka.persistence.PersistentRepr]
+[DEBUG] [02/02/2019 02:00:54.784] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] RecoveryCompleted
+[DEBUG] [02/02/2019 02:00:54.785] [actorSystem-protobuf-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-protobuf)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.ProtobufSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateCarEvt]
+[DEBUG] [02/02/2019 02:00:54.786] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:01:07.609] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:01:12.301] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:01:25.223] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:01:30.472] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:01:42.529] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:01:47.022] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:01:59.965] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:02:05.552] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:02:18.094] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:02:24.836] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:02:37.498] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:02:44.034] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:02:56.163] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:02:59.688] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:03:11.295] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:03:14.824] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:03:26.910] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:03:32.142] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:03:44.323] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:03:49.550] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:04:02.896] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:04:08.163] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:04:20.275] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:04:25.627] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:04:37.568] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:04:44.015] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:04:57.016] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:05:02.029] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:05:14.110] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:05:19.494] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:05:31.829] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:05:35.272] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:05:47.237] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:05:53.089] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:06:05.528] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:06:11.315] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:06:23.763] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:06:29.492] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:06:41.848] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:06:46.791] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:06:58.998] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:07:02.747] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:07:15.008] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:07:20.680] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:07:34.265] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:07:40.099] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:07:52.554] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:07:57.464] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:08:09.858] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:08:15.168] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:08:27.253] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:08:32.422] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:08:44.782] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:08:50.446] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:09:03.510] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:09:09.081] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:09:21.371] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:09:24.725] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:09:38.009] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:09:44.117] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:09:56.996] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:10:02.462] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:10:15.040] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:10:20.843] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:10:34.273] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:10:40.037] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:10:52.729] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:10:58.216] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:11:11.860] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:11:16.916] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:11:28.993] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:11:34.456] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:11:48.316] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:11:53.483] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:12:06.257] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:12:11.850] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:12:24.413] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:12:30.154] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:12:43.038] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:12:47.595] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:12:59.267] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:13:02.612] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:13:14.400] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:13:17.923] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:13:30.273] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:13:34.968] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:13:48.196] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:13:53.740] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:14:06.494] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:14:12.015] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:14:24.625] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:14:31.012] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:14:43.615] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:14:49.330] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:15:01.669] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:15:07.421] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:15:20.861] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:15:26.740] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:15:39.093] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[INFO] [02/02/2019 02:15:39.093] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] Test UpdateComplexCar (5000000 operations)
+[DEBUG] [02/02/2019 02:15:39.093] [actorSystem-protobuf-akka.persistence.dispatchers.default-plugin-dispatcher-8] [akka.serialization.Serialization(akka://actorSystem-protobuf)] Using serializer [de.maxbundscherer.akka.serializationcomparision.serializer.ProtobufSerializer] for message [de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate$UpdateComplexCarEvt]
+[DEBUG] [02/02/2019 02:15:43.406] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:16:06.046] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:16:11.877] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:16:33.679] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:16:40.042] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:17:01.857] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:17:05.147] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:17:28.890] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:17:34.733] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:17:57.482] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:18:03.203] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:18:26.017] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:18:31.386] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:18:53.059] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:18:58.729] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:19:19.226] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:19:22.971] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:19:44.099] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:19:49.771] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:20:12.370] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:20:18.040] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:20:40.993] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:20:46.396] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:21:08.276] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:21:14.214] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:21:34.554] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:21:38.258] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:22:02.183] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:22:07.440] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:22:28.411] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:22:32.387] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:22:53.916] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:22:59.555] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:23:24.247] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:23:30.333] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:23:51.209] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:23:57.423] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:24:20.824] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:24:25.947] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:24:48.951] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:24:54.694] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:25:16.419] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:25:21.991] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:25:44.630] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:25:49.950] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:26:11.861] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:26:17.741] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:26:41.173] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:26:46.958] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:27:10.778] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:27:16.168] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:27:38.145] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:27:43.475] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:28:05.290] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:28:10.408] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:28:33.631] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:28:39.465] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:29:01.955] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:29:07.683] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:29:31.464] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:29:37.824] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:30:00.352] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:30:06.120] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:30:28.304] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:30:33.668] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:30:56.923] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:31:02.867] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:31:23.569] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:31:29.285] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:31:52.302] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:31:57.597] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:32:20.557] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:32:26.467] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:32:47.728] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:32:53.435] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:33:14.951] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:33:19.955] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:33:41.393] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:33:47.536] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:34:10.756] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:34:15.956] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:34:39.450] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:34:44.629] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:35:05.345] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:35:09.470] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:35:32.083] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:35:38.223] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:36:02.060] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:36:07.568] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:36:28.635] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:36:33.962] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:36:54.653] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:36:59.512] [actorSystem-protobuf-akka.actor.default-dispatcher-7] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:37:20.673] [actorSystem-protobuf-akka.actor.default-dispatcher-3] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:37:26.509] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:37:49.860] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:37:54.460] [actorSystem-protobuf-akka.actor.default-dispatcher-18] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:38:18.616] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[DEBUG] [02/02/2019 02:38:24.268] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[DEBUG] [02/02/2019 02:38:45.221] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Do snapshot now
+[ERROR] [02/02/2019 02:38:45.221] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Simulate crash
+java.lang.RuntimeException: Simulate crash
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.de$maxbundscherer$akka$serializationcomparision$actors$CarGarageActor$$processCommand(CarGarageActor.scala:148)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor$$anonfun$receiveCommand$1.applyOrElse(CarGarageActor.scala:92)
+	at akka.actor.Actor.aroundReceive(Actor.scala:517)
+	at akka.actor.Actor.aroundReceive$(Actor.scala:515)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.akka$persistence$Eventsourced$$super$aroundReceive(CarGarageActor.scala:39)
+	at akka.persistence.Eventsourced$$anon$1.stateReceive(Eventsourced.scala:753)
+	at akka.persistence.Eventsourced.aroundReceive(Eventsourced.scala:222)
+	at akka.persistence.Eventsourced.aroundReceive$(Eventsourced.scala:221)
+	at de.maxbundscherer.akka.serializationcomparision.actors.CarGarageActor.aroundReceive(CarGarageActor.scala:39)
+	at akka.actor.ActorCell.receiveMessage(ActorCell.scala:588)
+	at akka.actor.ActorCell.invoke(ActorCell.scala:557)
+	at akka.dispatch.Mailbox.processMailbox(Mailbox.scala:258)
+	at akka.dispatch.Mailbox.run(Mailbox.scala:225)
+	at akka.dispatch.Mailbox.exec(Mailbox.scala:235)
+	at akka.dispatch.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260)
+	at akka.dispatch.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339)
+	at akka.dispatch.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979)
+	at akka.dispatch.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107)
+
+[DEBUG] [02/02/2019 02:38:45.222] [actorSystem-protobuf-akka.actor.default-dispatcher-21] [akka://actorSystem-protobuf/user/$a] Actor online
+[DEBUG] [02/02/2019 02:38:45.651] [actorSystem-protobuf-akka.actor.default-dispatcher-6] [akka://actorSystem-protobuf/user/$a] Restore from snapshot
+[DEBUG] [02/02/2019 02:38:52.069] [actorSystem-protobuf-akka.actor.default-dispatcher-4] [akka://actorSystem-protobuf/user/$a] RecoveryCompleted
+[DEBUG] [02/02/2019 02:38:52.078] [actorSystem-protobuf-akka.actor.default-dispatcher-4] [akka://actorSystem-protobuf/user/$a] SaveSnapshotSuccess
+[INFO] [02/02/2019 02:38:52.094] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] StopTimeMeasurement: 2319 seconds
+[INFO] [02/02/2019 02:38:52.094] [run-main-0] [akka.actor.ActorSystemImpl(actorSystem-protobuf)] --- End Experiment (modeValue='protobuf') ---
+[DEBUG] [02/02/2019 02:38:53.097] [actorSystem-protobuf-akka.actor.default-dispatcher-16] [EventStream] shutting down: StandardOutLogger
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 7293 s, completed 02.02.2019 02:38:53[0m
