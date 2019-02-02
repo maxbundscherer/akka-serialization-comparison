@@ -1,0 +1,161 @@
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project global-plugins from idea.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading global plugins from /Users/maximilianbundscherer/.sbt/1.0/plugins[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project akka-serialization-comparision-build from protoc.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading project definition from /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/project[0m
+[0m[[0m[0minfo[0m] [0m[0mLoading settings for project akka-serialization-comparision from build.sbt ...[0m
+[0m[[0m[0minfo[0m] [0m[0mSet current project to akka-serialization-comparision (in build file:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/)[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 3 s, completed 02.02.2019 17:37:07[0m
+[0m[[0m[0minfo[0m] [0m[0mUpdating ...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone updating.[0m
+[0m[[0m[33mwarn[0m] [0m[0mThere may be incompatibilities among your library dependencies.[0m
+[0m[[0m[33mwarn[0m] [0m[0mRun 'evicted' to see detailed eviction warnings[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 1 protobuf files to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling schema /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf/protobuf.proto[0m
+protoc-jar: protoc version: 3.6.0, detected platform: osx-x86_64 (mac os x/x86_64)
+protoc-jar: embedded: bin/3.6.0/protoc-3.6.0-osx-x86_64.exe
+protoc-jar: executing: [/var/folders/75/_6mblp3n0cdd1m8fq1rt8bjr0000gp/T/protocjar6319689744834076317/bin/protoc.exe, --plugin=protoc-gen-scala=/var/folders/75/_6mblp3n0cdd1m8fq1rt8bjr0000gp/T/protocbridge6383644394284022687, --scala_out=grpc:/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/protobuf_external, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf, -I/Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/protobuf_external, /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/src/main/protobuf/protobuf.proto]
+[0m[[0m[0minfo[0m] [0m[0mCompiling protobuf[0m
+[0m[[0m[0minfo[0m] [0m[0mProtoc target directory: /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/src_managed/main[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 33 Scala sources and 7 Java sources to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mthere were 11 feature warnings; re-run with -feature for details[0m
+[0m[[0m[33mwarn[0m] [0m[0mone warning found[0m
+[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
+[0m[[0m[0minfo[0m] [0m[0mCompiling 4 Scala sources to /Users/maximilianbundscherer/Documents/Sync/akka-serialization-comparision/target/scala-2.12/test-classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mDone compiling.[0m
+Start MicroBench (protobuf): 5:37:24:698
+[0m[[0m[0mdebug[0m] [0m[0mStarting warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m0. warmup run running time: 8521.710525 (covNoGC: NaN, covGC: NaN)[0m
+[0m[[0m[0mdebug[0m] [0m[0m1. warmup run running time: 34.099282 (covNoGC: NaN, covGC: 1,4029)[0m
+[0m[[0m[0mdebug[0m] [0m[0m2. warmup run running time: 28.70797 (covNoGC: 0,1214, covGC: 1,7130)[0m
+[0m[[0m[0mdebug[0m] [0m[0m3. warmup run running time: 25.793592 (covNoGC: 0,1427, covGC: 1,9726)[0m
+[0m[[0m[0mdebug[0m] [0m[0m4. warmup run running time: 25.122146 (covNoGC: 0,1438, covGC: 2,1993)[0m
+[0m[[0m[0mdebug[0m] [0m[0m5. warmup run running time: 25.708921 (covNoGC: 0,1342, covGC: 2,4022)[0m
+[0m[[0m[0mdebug[0m] [0m[0m6. warmup run running time: 21.276107 (covNoGC: 0,1605, covGC: 2,5886)[0m
+[0m[[0m[0mdebug[0m] [0m[0m7. warmup run running time: 20.315261 (covNoGC: 0,1788, covGC: 2,7612)[0m
+[0m[[0m[0mdebug[0m] [0m[0m8. warmup run running time: 19.565576 (covNoGC: 0,1925, covGC: 2,9224)[0m
+[0m[[0m[0mdebug[0m] [0m[0m9. warmup run running time: 19.535589 (covNoGC: 0,1994, covGC: 3,0738)[0m
+[0m[[0m[0mdebug[0m] [0m[0m10. warmup run running time: 19.352266 (covNoGC: 0,2035, covGC: 0,2035)[0m
+[0m[[0m[0mdebug[0m] [0m[0m11. warmup run running time: 19.426636 (covNoGC: 0,1552, covGC: 0,1552)[0m
+[0m[[0m[0mdebug[0m] [0m[0m12. warmup run running time: 19.367249 (covNoGC: 0,1311, covGC: 0,1311)[0m
+[0m[[0m[0mdebug[0m] [0m[0m13. warmup run running time: 18.596344 (covNoGC: 0,1211, covGC: 0,1211)[0m
+[0m[[0m[0mdebug[0m] [0m[0m14. warmup run running time: 18.087155 (covNoGC: 0,1065, covGC: 0,1065)[0m
+[0m[[0m[0mdebug[0m] [0m[0m15. warmup run running time: 18.486415 (covNoGC: 0,0474, covGC: 0,0474)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSteady-state detected.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEnding warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning test set for Serialize and Deserialize protobuf.serializeAndDeserialize, curve Test-0[0m
+[0m[[0m[0mdebug[0m] [0m[0mStarting warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m0. warmup run running time: 19.380484 (covNoGC: NaN, covGC: NaN)[0m
+[0m[[0m[0mdebug[0m] [0m[0m1. warmup run running time: 19.389498 (covNoGC: 0,0003, covGC: 0,0003)[0m
+[0m[[0m[0mdebug[0m] [0m[0m2. warmup run running time: 19.438896 (covNoGC: 0,0016, covGC: 0,0016)[0m
+[0m[[0m[0mdebug[0m] [0m[0m3. warmup run running time: 19.143569 (covNoGC: 0,0068, covGC: 0,0068)[0m
+[0m[[0m[0mdebug[0m] [0m[0m4. warmup run running time: 18.061307 (covNoGC: 0,0305, covGC: 0,0305)[0m
+[0m[[0m[0mdebug[0m] [0m[0m5. warmup run running time: 18.097289 (covNoGC: 0,0348, covGC: 0,0348)[0m
+[0m[[0m[0mdebug[0m] [0m[0m6. warmup run running time: 17.990151 (covNoGC: 0,0370, covGC: 0,0370)[0m
+[0m[[0m[0mdebug[0m] [0m[0m7. warmup run running time: 18.165563 (covNoGC: 0,0364, covGC: 0,0364)[0m
+[0m[[0m[0mdebug[0m] [0m[0m8. warmup run running time: 17.941489 (covNoGC: 0,0368, covGC: 0,0368)[0m
+[0m[[0m[0mdebug[0m] [0m[0m9. warmup run running time: 18.044821 (covNoGC: 0,0362, covGC: 0,0362)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSteady-state detected.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEnding warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m36 repetitions of the snippet starting.[0m
+[0m[[0m[0mdebug[0m] [0m[0mmeasurements: 19.006258 ms, 19.066119 ms, 18.765723 ms, 19.4585 ms, 19.014094 ms, 19.262205 ms, 19.094329 ms, 19.293954 ms, 18.790855 ms, 18.996568 ms, 19.10507 ms, 19.136375 ms, 19.018743 ms, 19.184722 ms, 18.984229 ms, 19.373376 ms, 19.435946 ms, 19.064657 ms, 19.045966 ms, 19.02056 ms, 18.888098 ms, 19.114803 ms, 19.061268 ms, 19.069155 ms, 19.06006 ms, 18.810044 ms, 19.15818 ms, 19.032178 ms, 19.098199 ms, 19.247149 ms, 19.044645 ms, 18.860391 ms, 19.118035 ms, 18.999675 ms, 18.215286 ms, 18.141323 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mRepetitions ended.[0m
+[0m[[0m[0minfo[0m] [0m[0m::Benchmark Serialize and Deserialize protobuf.serializeAndDeserialize::[0m
+[0m[[0m[0minfo[0m] [0m[0mcores: 4[0m
+[0m[[0m[0minfo[0m] [0m[0mhostname: iMac-lager.local[0m
+[0m[[0m[0minfo[0m] [0m[0mname: Java HotSpot(TM) 64-Bit Server VM[0m
+[0m[[0m[0minfo[0m] [0m[0mosArch: x86_64[0m
+[0m[[0m[0minfo[0m] [0m[0mosName: Mac OS X[0m
+[0m[[0m[0minfo[0m] [0m[0mvendor: Oracle Corporation[0m
+[0m[[0m[0minfo[0m] [0m[0mversion: 25.144-b01[0m
+[0m[[0m[0minfo[0m] [0m[0mParameters(size-protobuf -> 10000): 18.141323[0m
+Start MicroBench (json): 5:37:35:214
+[0m[[0m[0mdebug[0m] [0m[0mStarting warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m0. warmup run running time: 827.770914 (covNoGC: NaN, covGC: NaN)[0m
+[0m[[0m[0mdebug[0m] [0m[0m1. warmup run running time: 318.798904 (covNoGC: 0,6278, covGC: 0,6278)[0m
+[0m[[0m[0mdebug[0m] [0m[0m2. warmup run running time: 224.903354 (covNoGC: 0,7095, covGC: 0,7095)[0m
+[0m[[0m[0mdebug[0m] [0m[0m3. warmup run running time: 188.468916 (covNoGC: 0,7615, covGC: 0,7615)[0m
+[0m[[0m[0mdebug[0m] [0m[0m4. warmup run running time: 181.523388 (covNoGC: 0,7854, covGC: 0,7854)[0m
+[0m[[0m[0mdebug[0m] [0m[0m5. warmup run running time: 201.877592 (covNoGC: 0,7777, covGC: 0,7777)[0m
+[0m[[0m[0mdebug[0m] [0m[0m6. warmup run running time: 285.96484 (covNoGC: 0,7234, covGC: 0,7234)[0m
+[0m[[0m[0mdebug[0m] [0m[0m7. warmup run running time: 339.67955 (covNoGC: 0,6646, covGC: 0,6646)[0m
+[0m[[0m[0mdebug[0m] [0m[0m8. warmup run running time: 207.559565 (covNoGC: 0,6646, covGC: 0,6586)[0m
+[0m[[0m[0mdebug[0m] [0m[0m9. warmup run running time: 172.973194 (covNoGC: 0,6750, covGC: 0,6656)[0m
+[0m[[0m[0mdebug[0m] [0m[0m10. warmup run running time: 172.505735 (covNoGC: 0,6806, covGC: 0,2718)[0m
+[0m[[0m[0mdebug[0m] [0m[0m11. warmup run running time: 173.102352 (covNoGC: 0,2859, covGC: 0,2599)[0m
+[0m[[0m[0mdebug[0m] [0m[0m12. warmup run running time: 172.258487 (covNoGC: 0,2718, covGC: 0,2731)[0m
+[0m[[0m[0mdebug[0m] [0m[0m13. warmup run running time: 171.257228 (covNoGC: 0,2842, covGC: 0,2800)[0m
+[0m[[0m[0mdebug[0m] [0m[0m14. warmup run running time: 172.777453 (covNoGC: 0,2899, covGC: 0,2836)[0m
+[0m[[0m[0mdebug[0m] [0m[0m15. warmup run running time: 172.188424 (covNoGC: 0,2936, covGC: 0,2928)[0m
+[0m[[0m[0mdebug[0m] [0m[0m16. warmup run running time: 171.356311 (covNoGC: 0,3023, covGC: 0,2745)[0m
+[0m[[0m[0mdebug[0m] [0m[0m17. warmup run running time: 171.282892 (covNoGC: 0,2804, covGC: 0,0638)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSteady-state detected.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEnding warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning test set for Serialize and Deserialize json.serializeAndDeserialize, curve Test-1[0m
+[0m[[0m[0mdebug[0m] [0m[0mStarting warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m0. warmup run running time: 171.037652 (covNoGC: NaN, covGC: NaN)[0m
+[0m[[0m[0mdebug[0m] [0m[0m1. warmup run running time: 176.042897 (covNoGC: NaN, covGC: 0,0204)[0m
+[0m[[0m[0mdebug[0m] [0m[0m2. warmup run running time: 171.961815 (covNoGC: 0,0038, covGC: 0,0154)[0m
+[0m[[0m[0mdebug[0m] [0m[0m3. warmup run running time: 171.327672 (covNoGC: 0,0028, covGC: 0,0135)[0m
+[0m[[0m[0mdebug[0m] [0m[0m4. warmup run running time: 171.201159 (covNoGC: 0,0024, covGC: 0,0123)[0m
+[0m[[0m[0mdebug[0m] [0m[0m5. warmup run running time: 170.545716 (covNoGC: 0,0030, covGC: 0,0118)[0m
+[0m[[0m[0mdebug[0m] [0m[0m6. warmup run running time: 171.837119 (covNoGC: 0,0031, covGC: 0,0107)[0m
+[0m[[0m[0mdebug[0m] [0m[0m7. warmup run running time: 171.568875 (covNoGC: 0,0028, covGC: 0,0100)[0m
+[0m[[0m[0mdebug[0m] [0m[0m8. warmup run running time: 172.195818 (covNoGC: 0,0032, covGC: 0,0094)[0m
+[0m[[0m[0mdebug[0m] [0m[0m9. warmup run running time: 171.506717 (covNoGC: 0,0030, covGC: 0,0089)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSteady-state detected.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEnding warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m36 repetitions of the snippet starting.[0m
+[0m[[0m[0mdebug[0m] [0m[0mmeasurements: 172.925266 ms, 172.030292 ms, 173.157608 ms, 172.434069 ms, 170.779221 ms, 172.095252 ms, 171.140351 ms, 172.184161 ms, 172.112858 ms, 172.500723 ms, 171.797047 ms, 214.081558 ms, 271.616094 ms, 254.270381 ms, 172.239423 ms, 172.262073 ms, 172.215211 ms, 170.846123 ms, 172.313542 ms, 172.182854 ms, 171.145561 ms, 171.581553 ms, 171.758737 ms, 171.835589 ms, 172.274082 ms, 172.705883 ms, 171.385743 ms, 176.194857 ms, 171.353401 ms, 172.963033 ms, 171.146845 ms, 171.329225 ms, 172.642067 ms, 172.560263 ms, 171.29875 ms, 172.643376 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mRepetitions ended.[0m
+[0m[[0m[0minfo[0m] [0m[0m::Benchmark Serialize and Deserialize json.serializeAndDeserialize::[0m
+[0m[[0m[0minfo[0m] [0m[0mcores: 4[0m
+[0m[[0m[0minfo[0m] [0m[0mhostname: iMac-lager.local[0m
+[0m[[0m[0minfo[0m] [0m[0mname: Java HotSpot(TM) 64-Bit Server VM[0m
+[0m[[0m[0minfo[0m] [0m[0mosArch: x86_64[0m
+[0m[[0m[0minfo[0m] [0m[0mosName: Mac OS X[0m
+[0m[[0m[0minfo[0m] [0m[0mvendor: Oracle Corporation[0m
+[0m[[0m[0minfo[0m] [0m[0mversion: 25.144-b01[0m
+[0m[[0m[0minfo[0m] [0m[0mParameters(size-json -> 10000): 170.779221[0m
+Start MicroBench (java): 5:37:48:68
+[0m[[0m[0mdebug[0m] [0m[0mStarting warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m0. warmup run running time: 632.2107 (covNoGC: NaN, covGC: NaN)[0m
+[0m[[0m[0mdebug[0m] [0m[0m1. warmup run running time: 373.603672 (covNoGC: 0,3636, covGC: 0,3636)[0m
+[0m[[0m[0mdebug[0m] [0m[0m2. warmup run running time: 295.860564 (covNoGC: 0,4058, covGC: 0,4058)[0m
+[0m[[0m[0mdebug[0m] [0m[0m3. warmup run running time: 295.901477 (covNoGC: 0,3993, covGC: 0,3993)[0m
+[0m[[0m[0mdebug[0m] [0m[0m4. warmup run running time: 298.424568 (covNoGC: 0,3993, covGC: 0,3832)[0m
+[0m[[0m[0mdebug[0m] [0m[0m5. warmup run running time: 294.392777 (covNoGC: 0,3855, covGC: 0,3684)[0m
+[0m[[0m[0mdebug[0m] [0m[0m6. warmup run running time: 295.084702 (covNoGC: 0,3699, covGC: 0,3537)[0m
+[0m[[0m[0mdebug[0m] [0m[0m7. warmup run running time: 293.467861 (covNoGC: 0,3555, covGC: 0,3406)[0m
+[0m[[0m[0mdebug[0m] [0m[0m8. warmup run running time: 293.579326 (covNoGC: 0,3420, covGC: 0,3284)[0m
+[0m[[0m[0mdebug[0m] [0m[0m9. warmup run running time: 293.849729 (covNoGC: 0,3295, covGC: 0,3171)[0m
+[0m[[0m[0mdebug[0m] [0m[0m10. warmup run running time: 293.773837 (covNoGC: 0,3181, covGC: 0,0823)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSteady-state detected.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEnding warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning test set for Serialize and Deserialize java.serializeAndDeserialize, curve Test-2[0m
+[0m[[0m[0mdebug[0m] [0m[0mStarting warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m0. warmup run running time: 293.124578 (covNoGC: NaN, covGC: NaN)[0m
+[0m[[0m[0mdebug[0m] [0m[0m1. warmup run running time: 293.18849 (covNoGC: 0,0002, covGC: 0,0002)[0m
+[0m[[0m[0mdebug[0m] [0m[0m2. warmup run running time: 291.811408 (covNoGC: 0,0027, covGC: 0,0027)[0m
+[0m[[0m[0mdebug[0m] [0m[0m3. warmup run running time: 292.614189 (covNoGC: 0,0022, covGC: 0,0022)[0m
+[0m[[0m[0mdebug[0m] [0m[0m4. warmup run running time: 293.539326 (covNoGC: 0,0023, covGC: 0,0023)[0m
+[0m[[0m[0mdebug[0m] [0m[0m5. warmup run running time: 294.127129 (covNoGC: 0,0027, covGC: 0,0027)[0m
+[0m[[0m[0mdebug[0m] [0m[0m6. warmup run running time: 292.687542 (covNoGC: 0,0025, covGC: 0,0025)[0m
+[0m[[0m[0mdebug[0m] [0m[0m7. warmup run running time: 302.279106 (covNoGC: 0,0025, covGC: 0,0114)[0m
+[0m[[0m[0mdebug[0m] [0m[0m8. warmup run running time: 293.062304 (covNoGC: 0,0023, covGC: 0,0107)[0m
+[0m[[0m[0mdebug[0m] [0m[0m9. warmup run running time: 292.221647 (covNoGC: 0,0024, covGC: 0,0103)[0m
+[0m[[0m[0mdebug[0m] [0m[0mSteady-state detected.[0m
+[0m[[0m[0mdebug[0m] [0m[0mEnding warmup.[0m
+[0m[[0m[0mdebug[0m] [0m[0m36 repetitions of the snippet starting.[0m
+[0m[[0m[0mdebug[0m] [0m[0mmeasurements: 293.471929 ms, 291.442078 ms, 291.641075 ms, 292.402475 ms, 291.263868 ms, 293.268104 ms, 291.772068 ms, 292.669339 ms, 291.31953 ms, 291.911929 ms, 292.348702 ms, 291.552739 ms, 291.845727 ms, 303.331036 ms, 291.945967 ms, 293.026414 ms, 291.866972 ms, 293.044492 ms, 292.159047 ms, 291.615436 ms, 292.531885 ms, 292.372972 ms, 292.002833 ms, 291.316609 ms, 293.194562 ms, 292.353594 ms, 292.922938 ms, 296.244341 ms, 291.285334 ms, 292.300557 ms, 292.073275 ms, 292.239084 ms, 291.981855 ms, 291.919999 ms, 292.756712 ms, 293.498783 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mRepetitions ended.[0m
+[0m[[0m[0minfo[0m] [0m[0m::Benchmark Serialize and Deserialize java.serializeAndDeserialize::[0m
+[0m[[0m[0minfo[0m] [0m[0mcores: 4[0m
+[0m[[0m[0minfo[0m] [0m[0mhostname: iMac-lager.local[0m
+[0m[[0m[0minfo[0m] [0m[0mname: Java HotSpot(TM) 64-Bit Server VM[0m
+[0m[[0m[0minfo[0m] [0m[0mosArch: x86_64[0m
+[0m[[0m[0minfo[0m] [0m[0mosName: Mac OS X[0m
+[0m[[0m[0minfo[0m] [0m[0mvendor: Oracle Corporation[0m
+[0m[[0m[0minfo[0m] [0m[0mversion: 25.144-b01[0m
+[0m[[0m[0minfo[0m] [0m[0mParameters(size-java -> 10000): 291.263868[0m
+[0m[[0m[0minfo[0m] [0m[0mPassed: Total 0, Failed 0, Errors 0, Passed 0[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 59 s, completed 02.02.2019 17:38:06[0m
