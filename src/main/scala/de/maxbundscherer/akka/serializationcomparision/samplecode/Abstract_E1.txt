@@ -2,15 +2,14 @@
 Use this tool: https://sequencediagram.org
 #############################################
 
+#############################################
+Use this tool: https://sequencediagram.org
+#############################################
+
 title Abstrakter Ablauf E1
 
-participant Main
 participant ExperimentRunner
 participant ActorSystem
-
-note over Main: Programm starten
-
-Main->ExperimentRunner: Starten ExperimentRunner
 
 note over ExperimentRunner: ExperimentRunner starten und\nKonfiguration mit Testdaten laden
 
@@ -51,9 +50,3 @@ ExperimentRunner->ActorSystem: Beenden Test-Aktorsystem mit Test-Aktor
 note over ActorSystem: Test-Aktor und Test-Aktorsystem\nbeenden
 
 note over ExperimentRunner: ExperimentRunner beenden
-
-Main->ExperimentRunner: (Starten weiterer ExperimentRunner)
-
-note over ExperimentRunner: ...
-
-note over Main: Programm beenden
