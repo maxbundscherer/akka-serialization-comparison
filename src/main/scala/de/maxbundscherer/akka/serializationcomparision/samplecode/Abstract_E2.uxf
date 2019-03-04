@@ -1,0 +1,50 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>240</x><y>149</y><w>530</w><h>280</h></coordinates><panel_attributes>AbstractTest
+{abstract}
+--
+
+serializer: AbstractSerializer
+
+[...]
+
+--
+
+- triggerSingleSerializeAndDeserialize(i: Int): Unit
+
+- serializeAddCarEvt(value: AddCarEvt): Array[Byte]
+- deserializeAddCarEvt(value: Array[Byte]): AddCarEvt
+
+- serializeAddComplexCarEvt(value: AddComplexCarEvt): Array[Byte]
+- deserializeAddComplexCarEvt(value: Array[Byte]): AddComplexCarEvt
+
+[...]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>499</y><w>170</w><h>140</h></coordinates><panel_attributes>JavaTest
+--
+
+serializer: AbstractSerializer
+
+[...]
+
+--
+
+[...]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>499</y><w>170</w><h>140</h></coordinates><panel_attributes>JsonTest
+--
+
+serializer: AbstractSerializer
+
+[...]
+
+--
+
+[...]</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>499</y><w>170</w><h>140</h></coordinates><panel_attributes>ProtobufTest
+--
+
+serializer: AbstractSerializer
+
+[...]
+
+--
+
+[...]</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>419</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>419</y><w>210</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>190;10;190;40;10;40;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>419</y><w>200</w><h>100</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;40;180;40;180;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>240</x><y>699</y><w>170</w><h>30</h></coordinates><panel_attributes>JavaSerializer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>420</x><y>699</y><w>170</w><h>30</h></coordinates><panel_attributes>JsonSerializer</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>600</x><y>699</y><w>170</w><h>30</h></coordinates><panel_attributes>ProtobufSerializer</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>630</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>500</x><y>630</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>670</x><y>630</y><w>60</w><h>90</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>840</x><y>270</y><w>100</w><h>30</h></coordinates><panel_attributes>Configuration</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>760</x><y>270</y><w>100</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>80;20;10;20</additional_attributes></element></diagram>

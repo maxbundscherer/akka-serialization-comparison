@@ -1,8 +1,7 @@
-package de.maxbundscherer.akka.serializationcomparision
+package de.maxbundscherer.akka.serializationcomparision.utils
 
-import de.maxbundscherer.akka.serializationcomparision.ExperimentMode.ExperimentMode
 import de.maxbundscherer.akka.serializationcomparision.persistence.CarGarageAggregate.{Car, ComplexCar}
-import de.maxbundscherer.akka.serializationcomparision.utils.{Configuration, SimpleTimeMeasurement, TestSet}
+import de.maxbundscherer.akka.serializationcomparision.utils.ExperimentMode.ExperimentMode
 
 import akka.actor.ActorSystem
 import akka.event.LoggingAdapter

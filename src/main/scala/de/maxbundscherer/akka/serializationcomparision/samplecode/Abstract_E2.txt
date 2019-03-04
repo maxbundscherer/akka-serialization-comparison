@@ -1,5 +1,0 @@
-#############################################
-Use this tool: https://sequencediagram.org
-#############################################
-
-title Abstrakter Ablauf E2

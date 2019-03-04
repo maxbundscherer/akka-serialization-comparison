@@ -1,6 +1,6 @@
 package de.maxbundscherer.akka.serializationcomparision
 
-import de.maxbundscherer.akka.serializationcomparision.utils.Configuration
+import de.maxbundscherer.akka.serializationcomparision.utils.{Configuration, ExperimentMode, ExperimentRunner}
 
 import akka.util.Timeout
 import scala.concurrent.duration._
