@@ -1,4 +1,4 @@
-# Akka Serialization Comparision
+# Akka Serialization Comparison
 
 [![shields.io](http://img.shields.io/badge/license-Apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
 [![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](#)
