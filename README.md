@@ -1,7 +1,7 @@
 # Akka Serialization Comparison
 
 [![shields.io](http://img.shields.io/badge/license-Apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.txt)
-![](https://github.com/maxbundscherer/akka-serialization-comparison/workflows/CI%20Test/badge.svg))
+![](https://github.com/maxbundscherer/akka-serialization-comparison/workflows/CI%20Test/badge.svg)
 
 Author: [Maximilian Bundscherer](https://bundscherer-online.de)
 
